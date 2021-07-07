@@ -1,0 +1,68 @@
+<script lang="typescript">
+  import { onMount } from "svelte";
+  import axios from "axios";
+
+  type HanTaResult = [string, string, string[], string];
+
+  let currentTokens: HanTaResult[] = [["Test", "", [], "ADV"]];
+
+  async function tokenize() {
+    const result = (await axios.get("http://localhost:8080/analyze")).data;
+
+    currentTokens = result;
+	console.log(currentTokens);
+  }
+
+  onMount(() => {
+    tokenize();
+  });
+
+  function generateSentences(currentTokens: HanTaResult[]) {
+    console.log("generate sentences");
+
+    const sentences: HanTaResult[][] = [];
+    let currentSentence: HanTaResult[] = [];
+    for (let i = 0; i < currentTokens.length; i++) {
+      const c = currentTokens[i];
+
+      currentSentence.push(currentTokens[i]);
+
+      if (c[0] == ".") {
+        sentences.push(currentSentence);
+        currentSentence = [];
+
+        continue;
+      }
+    }
+
+	if (currentSentence.length > 0) {
+		sentences.push(currentSentence);
+	}
+
+	console.log(sentences)
+    return sentences;
+  }
+
+</script>
+
+<div class="text-center">
+  <div class="flex flex-col items-center justify-center">
+    {#each generateSentences(currentTokens) as sentence, i}
+      <div class="flex flex-row mt-2 border border-black">
+        {#each sentence as word, i}
+          <div class="flex flex-col">
+            <div class="m-1">{word[3]}</div>
+            <div class="m-1"><span>{word[0]}</span></div>
+          </div>
+        {/each}
+      </div>
+    {/each}
+  </div>
+</div>
+
+<style>
+  :global(body) {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+</style>

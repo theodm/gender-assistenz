@@ -13,6 +13,9 @@ dataset = "*"
 bottle = "*"
 matplotlib = "*"
 stanza = "*"
+pytest = "*"
+loguru = "*"
+conllu = "*"
 
 [dev-packages]
 

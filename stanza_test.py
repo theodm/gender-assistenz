@@ -3,6 +3,11 @@ import json
 import stanza
 
 # stanza.download('de')
+from loguru import logger
+
+from grammar.adjective import transform_adjective
+from grammar.determiner import transform_determiner
+from grammar.noun import transform_noun
 from utils.regex import regex_first_or_none
 from wiktionary.api import find_by_lemma
 
@@ -63,7 +68,20 @@ class RecWord:
     # Suche die Kinder nach einer bestimmten
     # Relationseigenschaft (det, amod, ...) ab.
     def find_rel(self, deprel):
+        if type(deprel) is list:
+            return self.find_multiple_rel(deprel)
+
         return self.find_multiple_rel([deprel])
+
+    def find_rel_first(self, deprel):
+        res = self.find_multiple_rel(deprel)
+
+        if not res:
+            return None
+
+        return res[0]
+
+
 
     # Ein Substantiv wird meist von einem Determinativ begleitet.
     #
@@ -171,186 +189,96 @@ class RecWord:
         print(f"direct det: {self.find_det()}")
         print(f"adnominal det: {self.find_det_in_adnominal_clauses()}")
 
-        # target_gender=Masc|Neut|Fem
-        # target_number=Sing|Plur
+        logger.debug("Verwendetes Wort (Lemma): {}", self.word.lemma)
 
-        gender_as_index = {
-            "Masc": 0,
-            "Neut": 1,
-            "Fem": 2
-        }
+        # Der$Die Bäcker?in
+        # Die Bäcker?Innen (Singular -> Plural)
+        # Bäcker und Bäckerinnen
 
-        case_as_index = {
-            "Nom": 0,
-            "Dat": 1,
-            "Acc": 2,
-            "Gen": 3
-        }
+        def transform(word, new_word, target_gender, target_number, additional_transform_noun, additional_transform_by_words):
+            def define_change(word, new_text):
+                return {
+                    "start_char": word.word.start_char,
+                    "end_char": word.word.end_char,
+                    "word": word.word.text,
+                    "replace_with": new_text,
+                }
 
-        def modify_det(det, target_gender, target_number):
-            if det.word.xpos == "ART":
-                modify_art(det, target_gender, target_number)
-            elif det.word.xpos in ["PRELAT", "PRELS"]:
-                modify_prelat(det, target_gender, target_number)
+            changes = []
+
+            # Nomen manipulieren
+            new_noun = additional_transform_noun(
+                self,
+                transform_noun(new_word, self.Case, target_number)
+            )
+
+            changes.append(
+                define_change(
+                    word,
+                    new_noun
+                )
+            )
+
+            # Adjektive manipulieren
+            for amod in self.find_amod():
+                new_adj = additional_transform_by_words(
+                    transform_adjective(amod, self.Case, target_gender, target_number)
+                )
+
+                changes.append(
+                    define_change(
+                        amod,
+                        new_adj
+                    )
+                )
+
+            # Determiner bzw. Artikel manipulieren
+            for det in self.find_det():
+                new_det = additional_transform_by_words(
+                    transform_determiner(det, self.Case, target_gender, target_number)
+                )
+
+                changes.append(
+                    define_change(
+                        det,
+                        new_det
+                    )
+                )
+
+            for det in self.find_det_in_adnominal_clauses():
+                changes.append(
+                    define_change(
+                        det,
+                        transform_determiner(det, self.Case, target_gender, target_number),
+                        after_transform
+                    )
+                )
+
+            return changes
+
+        possible_corrections = []
+
+        def after_transform(word, new_text):
+            if word.word.xpos == "NN":
+                if new_text.endswith("innen"):
+                    return new_text[0:-5] + "?Innen"
+                elif new_text.endswith("in"):
+                    return new_text[0:-2] + "?In"
+
+                return new_text
             else:
-                assert False
+                if word.word.text != new_text:
+                    return word.word.text + "$" + new_text
 
-            return
+            return new_text
 
-        def modify_prelat(det, target_gender, target_number):
-            assert det.word.xpos == "PRELAT" or det.word.xpos == "PRELS"
+        if self.Number == "Sing":
+            possible_corrections.append(transform(self, weibliche_formen[0], "Fem", "Sing", after_transform))
+            possible_corrections.append(transform(self, weibliche_formen[0], "Fem", "Plur", after_transform))
+        else:
+            possible_corrections.append(transform(self, weibliche_formen[0], "Fem", "Plur", after_transform))
 
-            # https://www.deutschplus.net/pages/Relativpronomen_der_die_das
-            relativ_pronomen_derdiedas = [
-                "der",  # maskulin, nominativ
-                "dem",  # maskulin, dativ
-                "den",  # maskulin, akkusativ
-                "dessen",  # maskulin, genitiv
-
-                "das",  # neutrum, nominativ
-                "dem",  # neutrum, dativ
-                "das",  # neutrum, akkusativ
-                "dessen",  # neutrum, genitiv
-
-                "die",  # feminin, nominativ
-                "der",  # feminin, dativ
-                "die",  # feminin, akkusativ
-                "deren",  # feminin, genitiv
-
-                "die",  # plural, nominativ
-                "denen",  # plural, dativ
-                "die",  # plural, akkusativ
-                "deren"  # plural, genitiv
-            ]
-
-            relativ_pronomen_welche = [
-                "welcher",  # maskulin, nominativ
-                "welchem",  # maskulin, dativ
-                "welchen",  # maskulin, akkusativ
-                "-",  # maskulin, genitiv
-
-                "welches",  # neutrum, nominativ
-                "welchem",  # neutrum, dativ
-                "welches",  # neutrum, akkusativ
-                "-",  # neutrum, genitiv
-
-                "welche",  # feminin, nominativ
-                "welcher",  # feminin, dativ
-                "welches",  # feminin, akkusativ
-                "-",  # feminin, genitiv
-
-                "welche",  # plural, nominativ
-                "welchen",  # plural, dativ
-                "welche",  # plural, akkusativ
-                "-"  # plural, genitiv
-            ]
-
-            lower_det = det.word.text.lower()
-
-            derdiedas_det = lower_det in relativ_pronomen_derdiedas
-            welche_det = lower_det in relativ_pronomen_welche
-
-            # Kasus soll gleich bleiben
-            target_case = det.Case
-
-            assert derdiedas_det | welche_det
-
-            neuer_det = ""
-            if derdiedas_det:
-                if target_number == "Plur":
-                    neuer_det = relativ_pronomen_derdiedas[3 * 4 + case_as_index[target_case]]
-                else:
-                    neuer_det = relativ_pronomen_derdiedas[gender_as_index[target_gender] * 4 + case_as_index[target_case]]
-
-            if welche_det:
-                if target_number == "Plur":
-                    neuer_det = relativ_pronomen_welche[3 * 4 + case_as_index[target_case]]
-                else:
-                    neuer_det = relativ_pronomen_welche[gender_as_index[target_gender] * 4 + case_as_index[target_case]]
-
-            print("neuer det: " + neuer_det)
-
-        def modify_art(det, target_gender, target_number):
-            assert det.word.xpos == "ART"
-
-            # https://de.serlo.org/deutsch-als-fremdsprache/31129/unbestimmter-artikel
-            unbestimmte_artikel = [
-                "ein",  # maskulin, nominativ
-                "einem",  # maskulin, dativ
-                "einen",  # maskulin, akkusativ
-                "eines",  # maskulin, genitiv
-
-                "ein",  # neutrum, nominativ
-                "einem",  # neutrum, dativ
-                "ein",  # neutrum, akkusativ
-                "eines",  # neutrum, genitiv
-
-                "eine",  # feminin, nominativ
-                "einer",  # feminin, dativ
-                "eine",  # feminin, akkusativ
-                "einer",  # feminin, genitiv
-
-                "", # plural, nominativ
-                "", # plural, dativ
-                "", # plural, akkusativ
-                "" # plural, genitiv
-            ]
-
-            # https://de.serlo.org/deutsch-als-fremdsprache/31114/bestimmter-artikel
-            bestimmte_artikel = [
-                "der",  # maskulin, nominativ
-                "dem",  # maskulin, dativ
-                "den",  # maskulin, akkusativ
-                "des",  # maskulin, genitiv
-
-                "das",  # neutrum, nominativ
-                "dem",  # neutrum, dativ
-                "das",  # neutrum, akkusativ
-                "des",  # neutrum, genitiv
-
-                "die",  # feminin, nominativ
-                "der",  # feminin, dativ
-                "die",  # feminin, akkusativ
-                "der",  # feminin, genitiv
-
-                "die", # plural, nominativ
-                "den", # plural, dativ
-                "die", # plural, akkusativ
-                "der" # plural, genitiv
-            ]
-
-            lower_det = det.word.text.lower()
-
-            unbestimmter_det = lower_det in unbestimmte_artikel
-            bestimmter_det = lower_det in bestimmte_artikel
-
-            # Kasus soll gleich bleiben
-            target_case = det.Case
-
-            assert unbestimmter_det | bestimmter_det
-
-
-            neuer_det = ""
-            if unbestimmter_det:
-                if target_number == "Plur":
-                    neuer_det = unbestimmte_artikel[3 * 4 + case_as_index[target_case]]
-                else:
-                    neuer_det = unbestimmte_artikel[gender_as_index[target_gender] * 4 + case_as_index[target_case]]
-
-            if bestimmter_det:
-                if target_number == "Plur":
-                    neuer_det = bestimmte_artikel[3 * 4 + case_as_index[target_case]]
-                else:
-                    neuer_det = bestimmte_artikel[gender_as_index[target_gender] * 4 + case_as_index[target_case]]
-
-            print("neuer det: " + neuer_det)
-
-        for d in self.find_det():
-            modify_det(d, "Fem", "Sing")
-
-        for d in self.find_det_in_adnominal_clauses():
-            modify_det(d, "Fem", "Sing")
-
+        return possible_corrections
 
 def make_tree(sent):
     root_word = get_root_word(sent)
@@ -366,98 +294,28 @@ def do_correct(sentence):
         f'id:{word.id}\tword: {word.text}\tdeprel: {word.deprel}\thead: {word.head}\t lemma: {word.lemma}\t upos: {word.upos}\txpos: {word.xpos}\tfeats: {word.feats if word.feats else "_"}\t'
         for sent in doc.sentences for word in sent.words], sep='\n')
 
-    changes = []
+    result = []
 
     for sent in doc.sentences:
         tree = make_tree(sent)
 
         inorder = tree.in_order_list()
-
         for n in inorder:
             if n.word.xpos == "NN":
-                n.make_correction()
-                print()
+                corrections = n.make_correction()
 
-        # for word in sent.words:
-        #     print(f'id:{word.id}\tword: {word.text}\tdeprel: {word.deprel}\thead: {word.head}\t lemma: {word.lemma}\t upos: {word.upos}\txpos: {word.xpos}\tfeats: {word.feats if word.feats else "_"}\t')
-        #
-        #     if not word.feats:
-        #         changes.append({
-        #             "type": "INFO",
-        #             "taglevel": "5",
-        #             "start_char": word.start_char,
-        #             "end_char": word.end_char,
-        #             "word": word.text,
-        #             "short": "Keine Features",
-        #             "long": "Das Wort wurde nicht beachtet, da es keine morphologischen Eigenschaften zugewiesen bekommen hat."
-        #         })
-        #         continue
-        #
-        #     word_is_plural = "Number=Plur" in word.feats
-        #     word_is_masc = "Gender=Masc" in word.feats
-        #
-        #     if not word_is_plural:
-        #         changes.append({
-        #             "type": "INFO",
-        #             "taglevel": "4",
-        #             "start_char": word.start_char,
-        #             "end_char": word.end_char,
-        #             "word": word.text,
-        #             "short": "Nicht Plural",
-        #             "long": "Das Wort wurde ignoriert, da es nicht in Plural geschrieben wurde. (Bisher wird nur Plural unterstützt)"
-        #         })
-        #         continue
-        #
-        #     if not word_is_masc:
-        #         changes.append({
-        #             "type": "INFO",
-        #             "taglevel": "2",
-        #             "start_char": word.start_char,
-        #             "end_char": word.end_char,
-        #             "word": word.text,
-        #             "short": "Nicht Maskulin",
-        #             "long": "Das Wort wurde ignoriert, da es nicht in maskuliner Form geschrieben wurde."
-        #         })
-        #         continue
-        #
-        #     lemma_in_db = find_by_lemma(word.lemma)
-        #
-        #     if not lemma_in_db:
-        #         changes.append({
-        #             "type": "INFO",
-        #             "taglevel": "2",
-        #             "start_char": word.start_char,
-        #             "end_char": word.end_char,
-        #             "word": word.text,
-        #             "short": "Nicht in Datenbank",
-        #             "long": "Das Wort wurde ignoriert, da es nicht in der Wort-Datenbank gefunden wurde."
-        #         })
-        #         continue
-        #
-        #     weibliche_formen = json.loads(lemma_in_db["weibliche_formen"])
-        #     weibliche_formen = [find_by_lemma(x) for x in weibliche_formen]
-        #
-        #     case = regex_first_or_none("Case=(Gen|Nom|Dat|Acc)", word.feats)
-        #
-        #     mapping = {
-        #         "Nom": "nominativ_plural",
-        #         "Gen": "genitiv_plural",
-        #         "Dat": "dativ_plural",
-        #         "Acc": "akkusativ_plural",
-        #     }
-        #
-        #     changes.append({
-        #         "type": "REPLACE",
-        #         "taglevel": "1",
-        #         "start_char": word.start_char,
-        #         "end_char": word.end_char,
-        #         "word": word.text,
-        #         "replace_with": [w[mapping[case]] for w in weibliche_formen],
-        #     })
+                if not corrections:
+                    continue
 
-    print([x for x in changes if x["type"] == "REPLACE"])
+                result.append({
+                        "start_char": n.word.start_char,
+                        "end_char": n.word.end_char,
+                        "word": n.word.text,
+                        "possible_corrections": corrections
+                })
 
-    return changes
+
+    return result
 
 
 # sentence = 'Die Fußspuren der hungrigen Täter sind zu sehen. Zwielichtige Drogenhändler wurden für ihre Informanten-Dienste fürstlich entlohnt.'
@@ -493,6 +351,31 @@ def do_correct(sentence):
 
 # sentence = "Der Beamte, dessen fehlerhafte aber vertrauenswürdige Arbeit seines Kollegen nicht erkannt wurde, geht tanken."
 # sentence = "Die Firma, deren pünklicher Bauarbeiter mit seiner Tochter streikte, ging schlafen."
-sentence = "Ein verwirrter Schüler, dessen Arm gebrochen ist, ging schlafen"
+sentence = "Ein großer Schüler, dessen Arm gebrochen ist, ging schlafen"
+#
+result = do_correct(sentence)
 
-do_correct(sentence)
+print(sentence)
+
+def replace_in_str(old_str, _from, _to, new_str):
+    first_part = old_str[:_from]
+    middle_part = old_str[_from:_to]
+    last_part = old_str[_to:]
+
+    return first_part + new_str + last_part
+
+for word in result:
+    print(f"Mögliche Korrekturen für das Wort {word['word']}:")
+    print("")
+    for alt in word["possible_corrections"]:
+        alt_sentence = sentence
+
+        for correction in sorted(alt, key=lambda x: x["end_char"], reverse=True):
+            alt_sentence = replace_in_str(alt_sentence, correction["start_char"], correction["end_char"], correction["replace_with"])
+
+        print(alt_sentence)
+
+
+
+
+

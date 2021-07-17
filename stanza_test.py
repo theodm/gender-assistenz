@@ -81,6 +81,50 @@ class RecWord:
 
         return res[0]
 
+    def needs_to_be_gendered(self):
+        # Wenn der Elternknoten bereits ein Name ist,
+        # dann brauchen wir nicht gendern.
+        #
+        # Bsp.: Bundeswirtschaftsminister Werner Müller freut sich über solche Aussichten
+        #
+        # Negativ-Bsp.: Ziel ist es , dass sich T-DSL-Kunden auf dem Wege von Netz-Zusammenschaltungen einen Internet-Provider frei aussuchen dürfen .
+        if self.find_parent_if_rel("dep") and self.parent.word.upos == "PROPN":
+            return False
+
+        # Wenn ein Compound nicht gegendert werden muss, dann muss
+        # dieses Wort auch nicht gegendert werden. Beispielsweise ist
+        # in "AOL - Sprecher" AOL ein Compound von "Sprecher".
+        #
+        # Bsp.: AOL-Sprecher Stefan Michalk bestätigte dies gegenüber c't , meinte jedoch , dass derzeit noch nichts Konkretes geplant ist :
+        if self.find_rel_first("compound") and not self.find_rel_first("compound").needs_to_be_gendered():
+            return False
+
+        # Wenn ein Kindknoten sich auf das Nomen bezieht, und diese
+        # Beschreibung ein Name ist, dann brauchen wir nicht gendern.
+        #
+        # Bsp.: Klesch ist bereits neuer Betreiber in Hessen.
+        if self.find_rel_first("nsubj") and self.find_rel_first("nsubj").word.upos == "PROPN":
+            return False
+
+        # Wenn ein Kindknoten eine genauere Beschreibung des Nomen
+        # gibt (appos) und diese Beschreibung ein Name ist,
+        # dann brauchen wir nicht gendern.
+        #
+        # Bsp.: Seit dem heutigen Mittwochmorgen kursierten an der Frankfurter Börse Gerüchte , denen zufolge Telekom - Chef Ron Sommer zurücktreten wird .
+        if self.find_rel_first("appos") and self.find_rel_first("appos").word.upos == "PROPN":
+            return False
+
+        res = self.parent.find_parent_if_rel("appos") if self.parent else None
+
+        if not res:
+            return True
+
+        if res.word.upos == "PROPN":
+            return False
+
+
+
+        return True
 
 
     # Ein Substantiv wird meist von einem Determinativ begleitet.
@@ -151,6 +195,30 @@ class RecWord:
 
     def __repr__(self):
         return self.word.text
+
+    # Gibt die weiblichen Formen dieses Nomens zurück,
+    # falls es sich um ein Nomen handelt, falls dieses
+    # in unserer Datenbank überhaupt zu finden ist
+    # und falls es dann dazu weibliche Formen gibt.
+    def weibliche_formen(self):
+        # Gibt es das Wort in unserer Wort-Datenbank?
+        lemma_in_db = find_by_lemma(self.word.lemma)
+
+        if not lemma_in_db:
+            return None
+
+        weibliche_form_in_db = lemma_in_db["weibliche_formen"]
+
+        if not weibliche_form_in_db:
+            return None
+
+        weibliche_formen = json.loads(weibliche_form_in_db)
+        weibliche_formen = [find_by_lemma(x) for x in weibliche_formen]
+
+        if not weibliche_formen:
+            return None
+
+        return weibliche_formen
 
     def make_correction(self):
         # Gibt es das Wort in unserer Wort-Datenbank?
@@ -351,31 +419,31 @@ def do_correct(sentence):
 
 # sentence = "Der Beamte, dessen fehlerhafte aber vertrauenswürdige Arbeit seines Kollegen nicht erkannt wurde, geht tanken."
 # sentence = "Die Firma, deren pünklicher Bauarbeiter mit seiner Tochter streikte, ging schlafen."
-sentence = "Ein großer Schüler, dessen Arm gebrochen ist, ging schlafen"
+# sentence = "Ein großer Schüler, dessen Arm gebrochen ist, ging schlafen"
+# #
+# result = do_correct(sentence)
 #
-result = do_correct(sentence)
-
-print(sentence)
-
-def replace_in_str(old_str, _from, _to, new_str):
-    first_part = old_str[:_from]
-    middle_part = old_str[_from:_to]
-    last_part = old_str[_to:]
-
-    return first_part + new_str + last_part
-
-for word in result:
-    print(f"Mögliche Korrekturen für das Wort {word['word']}:")
-    print("")
-    for alt in word["possible_corrections"]:
-        alt_sentence = sentence
-
-        for correction in sorted(alt, key=lambda x: x["end_char"], reverse=True):
-            alt_sentence = replace_in_str(alt_sentence, correction["start_char"], correction["end_char"], correction["replace_with"])
-
-        print(alt_sentence)
-
-
+# print(sentence)
+#
+# def replace_in_str(old_str, _from, _to, new_str):
+#     first_part = old_str[:_from]
+#     middle_part = old_str[_from:_to]
+#     last_part = old_str[_to:]
+#
+#     return first_part + new_str + last_part
+#
+# for word in result:
+#     print(f"Mögliche Korrekturen für das Wort {word['word']}:")
+#     print("")
+#     for alt in word["possible_corrections"]:
+#         alt_sentence = sentence
+#
+#         for correction in sorted(alt, key=lambda x: x["end_char"], reverse=True):
+#             alt_sentence = replace_in_str(alt_sentence, correction["start_char"], correction["end_char"], correction["replace_with"])
+#
+#         print(alt_sentence)
+#
+#
 
 
 

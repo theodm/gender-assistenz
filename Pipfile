@@ -16,6 +16,7 @@ stanza = "*"
 pytest = "*"
 loguru = "*"
 conllu = "*"
+spacy = "*"
 
 [dev-packages]
 

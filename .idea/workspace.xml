@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="39c38374-acb6-4a6d-8688-dc89c31c7de9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/pgender/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ggender.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/other.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analyze.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analyze_server.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/postcss.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/snowpack.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.svelte.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/Tailwind.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/svelte.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/tailwind.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/types/static.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/corenlp/corenlp_down.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpus_analyze.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpus_tester/corpus_tester.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpus_tester/one_sentence_tester.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpus_tester/test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grammar/adjective.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grammar/determiner.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grammar/noun.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grammar/shared.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nltk_downlaod.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spacytest/spacytest.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stanza_test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_stanza.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tiger/test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tiger/tiger.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/regex.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wiktionary/api.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wiktionary/parser.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wiktionary/test.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1vlUY7MihKTVz30woUbhWpHxGAW" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="GitStage.ChangesTree.GroupingKeys" value="directory&#10;module&#10;repository" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pgender" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Theo\Desktop\Projekte\ggender\pgender" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="39c38374-acb6-4a6d-8688-dc89c31c7de9" name="Default Changelist" comment="" />
+      <created>1627136214377</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1627136214377</updated>
+      <workItem from="1627136216137" duration="131000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

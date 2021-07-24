@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "pgender"
+version = "0.1.0"
+description = ""
+authors = ["Theodor Diesner-Mayer <theo.dm94@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8, <3.9"
+dataset = "^1.5.0"
+spacy = "^3.1.1"
+loguru = "^0.5.3"
+coreferee = "^1.0.1"
+conllu = "^4.4"
+scikit-learn = "^0.24.2"
+pandas = "^1.3.0"
+jupyter = "^1.0.0"
+ipykernel = "^6.0.3"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

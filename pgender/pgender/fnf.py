@@ -1,6 +1,6 @@
 import json
 
-from wiktionary.api import find_by_title
+from pgender.wiktionary.api import find_by_title, find_by_any_form
 
 
 def has_male_noun_form(word):
@@ -33,18 +33,21 @@ def male_noun_forms(word):
     return male_forms
 
 
-def has_feminine_noun_form(word):
-    return feminine_noun_forms(word) is not None
+def has_feminine_noun_form(word, search_every_form=False):
+    return feminine_noun_forms(word, search_every_form) is not None
 
 
-def feminine_noun_forms(word):
+def feminine_noun_forms(word, search_every_form=False):
     # Gibt es das Wort in unserer Wort-Datenbank?
 
     lemma = word
     if not isinstance(word, str):
         lemma = word.lemma_
 
-    lemma_in_db = find_by_title(lemma)
+    if search_every_form:
+        lemma_in_db = find_by_any_form(lemma)
+    else:
+        lemma_in_db = find_by_title(lemma)
 
     if not lemma_in_db:
         return None

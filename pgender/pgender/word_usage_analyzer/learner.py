@@ -16,8 +16,6 @@ doc = spacify(example_text)
 
 print(doc)
 
-
-
 # # Read in data
 # data = pd.read_csv('clean_data.csv')
 # texts = data['text'].astype(str)

@@ -5,6 +5,8 @@
     "ts-check": "svelte-check"
   },
   "dependencies": {
+    "@codemirror/state": "^0.18.7",
+    "@codemirror/view": "^0.18.19",
     "@types/axios": "^0.14.0",
     "axios": "^0.21.1",
     "debounce": "^1.2.1",

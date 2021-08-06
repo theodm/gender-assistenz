@@ -2,11 +2,29 @@ import coreferee, spacy
 from spacy import displacy
 
 nlp = spacy.load("de_dep_news_trf")
+nlp2 = spacy.load("de_core_news_lg")
+nlp2.add_pipe('coreferee')
 
 def spacify(text):
     return nlp(text)
 
 
+def spacify_with_coref(text):
+    doc2 = nlp2(text)
+    doc = nlp(text)
+
+    doc._.coref_chains = doc2._.coref_chains
+
+    return doc
+
+
+def displayc(text):
+    doc = spacify(text)
+
+    displacy.serve(doc, style="dep")
+#
+# for word in doc:
+#     print(word.text + "," + word.tag_ + "," + word.pos_)
 #
 # print(spacy.explain("nk"))
 #
@@ -22,7 +40,7 @@ def spacify(text):
 # sentence = "Klesch und Kleber sind bereits neue Betreiber in Hessen."
 # sentence = "Seit dem heutigen Mittwochmorgen kursierten an der Frankfurter Börse Gerüchte, denen zufolge Telekom-Chef Ron Sommer zurücktreten wird."
 # sentence = "Die Met@box 1000 soll interaktives Fernsehen ermöglichen , MP3-Dateien abspielen und über einen eingebauten DVD-Spieler verfügen ."
-# sentence = "Und auch die zahlreichen T-Online-Flatrate-Kunden hätten das Netz bisher nicht überlasten können ."
+# sentence = "Und auch die zahlreichen T-Online-Flatrate-Kunden hätten das Netz bisher nicht überlasten können."
 # doc = nlp(sentence)
 #
 # #doc._.coref_chains.print()

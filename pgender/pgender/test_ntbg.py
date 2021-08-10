@@ -101,7 +101,7 @@ def test_app_pron():
 
 
 def test_app_pron_rec():
-    result = _spacy("Hinter der neuen Firma steht unter anderem die Firma Lucent Technologies , einer der größten Anbieter von Equipment für Netzwerke und Telekommunikation .")
+    result = _spacy("Hinter der neuen esult Firma steht unter anderem die Firma Lucent Technologies , einer der größten Anbieter von Equipment für Netzwerke und Telekommunikation .")
 
     ntbg, code = needs_to_be_gendered(result, result[12])
 
@@ -185,4 +185,13 @@ def test_coref_multiple_sentence():
     assert code[0][0] == COREF_CHAIN
 
 
+
+def test_temp():
+    result = _spacy("Markus, der neue Betreiber, ging pleite.")
+
+    ntbg, code = needs_to_be_gendered(result, result[4])
+
+    print(code)
+
+    assert not ntbg
 

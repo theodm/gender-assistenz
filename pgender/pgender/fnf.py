@@ -36,6 +36,24 @@ def male_noun_forms(word):
 def has_feminine_noun_form(word, search_every_form=False):
     return feminine_noun_forms(word, search_every_form) is not None
 
+def find_in_db(word, search_every_form=False):
+    # Gibt es das Wort in unserer Wort-Datenbank?
+
+    lemma = word
+    if not isinstance(word, str):
+        lemma = word.lemma_
+
+    if search_every_form:
+        lemma_in_db = find_by_any_form(lemma)
+    else:
+        lemma_in_db = find_by_title(lemma)
+
+    if not lemma_in_db:
+        return None
+
+    return lemma_in_db
+
+
 
 def feminine_noun_forms(word, search_every_form=False):
     # Gibt es das Wort in unserer Wort-Datenbank?

@@ -76,6 +76,7 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="1vlUY7MihKTVz30woUbhWpHxGAW" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -105,6 +106,8 @@
       <workItem from="1627136216137" duration="2037000" />
       <workItem from="1627560998340" duration="5531000" />
       <workItem from="1628264813475" duration="1343000" />
+      <workItem from="1628696497009" duration="594000" />
+      <workItem from="1628930870032" duration="589000" />
     </task>
     <task id="LOCAL-00001" summary="viel umgeräumt, da andere Version von Python erforderlich">
       <created>1627136527547</created>

@@ -1,5 +1,6 @@
 from pgender._spacy import spacify_with_coref
-from pgender.ntbg import needs_to_be_gendered, RELATIVE_CLAUSE,APPOSITION,KOPULA_SENTENCE,GENITIVE_ATTRIBUTE,EIGENNAME_GEFUNDEN,NOUN_KERNEL_NAME_FOUND,COREF_CHAIN
+from pgender.ntbg import needs_to_be_gendered, RELATIVE_CLAUSE, APPOSITION, KOPULA_SENTENCE, GENITIVE_ATTRIBUTE, \
+    EIGENNAME_GEFUNDEN, NOUN_KERNEL_NAME_FOUND, COREF_CHAIN, NO_FEMININE_FORM, BOTH_FORMS
 import spacy
 
 def _spacy(sentence):
@@ -14,7 +15,6 @@ def test_eigenname_1():
 
     assert not ntbg
     assert code[0][0] == NOUN_KERNEL_NAME_FOUND
-
 
 def test_eigenname_2():
     result = _spacy("Der Bundeswirtschaftsminister freut sich über solche Aussichten.")
@@ -33,6 +33,34 @@ def test_eigenname_3():
     assert not ntbg
     assert code[0][0] == NOUN_KERNEL_NAME_FOUND
 
+
+def test_nomen_not_genderable():
+    result = _spacy("Der Käfig ist leer.")
+
+    ntbg, code = needs_to_be_gendered(result, result[1])
+
+    print(code)
+
+    assert not ntbg
+    assert code[0][0] == NO_FEMININE_FORM
+
+def test_nomen_with_dash():
+    result = _spacy("Die größte Konkurrenz zu den DSL-Anbietern dürfte demnach von den Kabelnetzbetreibern ausgehen , 18 Millionen Breitbandkabelanschlüsse wird es laut Studie geben .")
+
+    ntbg, code = needs_to_be_gendered(result, result[5])
+
+    print(code)
+
+    assert ntbg
+
+def test_compound_noun():
+    result = _spacy("Vielsurfer blockieren der Telekom das Telefonnetz.")
+
+    ntbg, code = needs_to_be_gendered(result, result[0])
+
+    print(code)
+
+    assert ntbg
 
 def test_kopula_regular_1():
     result = _spacy("Klesch ist bereits neuer Betreiber in Hessen.")
@@ -101,7 +129,7 @@ def test_app_pron():
 
 
 def test_app_pron_rec():
-    result = _spacy("Hinter der neuen esult Firma steht unter anderem die Firma Lucent Technologies , einer der größten Anbieter von Equipment für Netzwerke und Telekommunikation .")
+    result = _spacy("Hinter der neuen Firma steht unter anderem die Firma Lucent Technologies , einer der größten Anbieter von Equipment für Netzwerke und Telekommunikation .")
 
     ntbg, code = needs_to_be_gendered(result, result[12])
 
@@ -139,15 +167,15 @@ def test_gen_attribute_pos2():
 
     assert ntbg
 
-
-def test_TODOOD():
-    result = _spacy("""Das zwischen den beiden Unternehmen vereinbarte Entgelt soll " deutlich " unter dem derzeitigen regulierten Preis liegen , den Telekommunikationsunternehmen für die gleiche Leistung an die Deutsche Telekom zahlen müssen .""")
-
-    ntbg, code = needs_to_be_gendered(result, result[18], [result[18]])
-
-    print(code)
-
-    assert not ntbg
+#
+# def test_TODOOD():
+#     result = _spacy("""Das zwischen den beiden Unternehmen vereinbarte Entgelt soll " deutlich " unter dem derzeitigen regulierten Preis liegen , den Telekommunikationsunternehmen für die gleiche Leistung an die Deutsche Telekom zahlen müssen .""")
+#
+#     ntbg, code = needs_to_be_gendered(result, result[18], [result[18]])
+#
+#     print(code)
+#
+#     assert not ntbg
 
 # In dem zweiten Vergütungsbericht der Bundesregierung an den Bundestag , der vom Kabinett verabschiedet wurde , wird gefordert , dass digitale Speichermedien zukünftig der Vergütungspflicht unterliegen sollen . <-- Cooles Beispiel
 def test_relative_clause_subject():
@@ -165,7 +193,7 @@ def test_coref_single_sentence():
     result = _spacy("Während der Test ursprünglich am 31.12.2000 abgeschlossen sein sollte , geht er nun bis Ende April des nächsten Jahres weiter . ")
 
     print(result[11])
-    ntbg, code = needs_to_be_gendered(result, result[11], [])
+    ntbg, code = needs_to_be_gendered(result, result[11])
 
     print(code)
 
@@ -184,6 +212,69 @@ def test_coref_multiple_sentence():
     assert not ntbg
     assert code[0][0] == COREF_CHAIN
 
+def test_both_forms_1():
+    result = _spacy("Wissenschaftler und Wissenschaftlerinnen gehen ein Eis essen.")
+
+    ntbg, code = needs_to_be_gendered(result, result[0])
+
+    print(code)
+
+    assert not ntbg
+    assert code[0][0] == BOTH_FORMS
+
+
+def test_both_forms_2():
+    result = _spacy("Telekom-Kunden und Telekom-Kundinnen gehen ein Eis essen.")
+
+    ntbg, code = needs_to_be_gendered(result, result[0])
+
+    print(code)
+
+    assert not ntbg
+    assert code[0][0] == BOTH_FORMS
+
+
+def test_both_forms_3():
+    result = _spacy("Telekom-Kunden und Kundinnen gehen ein Eis essen.")
+
+    ntbg, code = needs_to_be_gendered(result, result[0])
+
+    print(code)
+
+    assert not ntbg
+    assert code[0][0] == BOTH_FORMS
+
+
+def test_both_forms_4():
+    result = _spacy("Wissenschaftlerinnen und Wissenschaftler gehen ein Eis essen.")
+
+    ntbg, code = needs_to_be_gendered(result, result[2])
+
+    print(code)
+
+    assert not ntbg
+    assert code[0][0] == BOTH_FORMS
+
+def test_both_forms_5():
+    result = _spacy("Wissenschaftlerinnen, Vertreter, Vertreterinnen und Wissenschaftler gehen ein Eis essen.")
+
+    ntbg, code = needs_to_be_gendered(result, result[6])
+
+    print(code)
+
+    assert not ntbg
+    assert code[0][0] == BOTH_FORMS
+
+
+def test_both_forms_6():
+    result = _spacy("Telekom-Kunden, Wissenschaftler, Wissenschaftlerinnen, und Telekom-Kundinnen gehen ein Eis essen.")
+
+    ntbg, code = needs_to_be_gendered(result, result[0])
+
+    print(code)
+
+    assert not ntbg
+    assert code[0][0] == BOTH_FORMS
 
 
 def test_temp():
@@ -194,4 +285,5 @@ def test_temp():
     print(code)
 
     assert not ntbg
+
 

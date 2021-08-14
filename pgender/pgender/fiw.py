@@ -4,7 +4,6 @@ from charsplit import Splitter
 from pgender.fnf import has_feminine_noun_form
 from pgender.wordlib import follow_parent_dep
 
-splitter = Splitter()
 
 def find_initial_words(doc):
     result = []
@@ -13,17 +12,7 @@ def find_initial_words(doc):
         logger.debug(f"{word.text} : {word.pos_} : {word.tag_} : {word.morph} : {word.lemma_}")
 
         if word.pos_ == "NOUN" and word.morph.get("Gender") and word.morph.get("Gender")[0] == "Masc":
-            if has_feminine_noun_form(word, False):
-                result.append((word, index))
-            elif has_feminine_noun_form(word, True):
-                result.append((word, index))
-            else:
-                splits = splitter.split_compound(word.text)
-
-                logger.debug(f"splits found: {splits}")
-
-                if splits and has_feminine_noun_form(splits[0][-1], True):
-                    result.append((word, index))
+            result.append((word, index))
 
         elif word.pos_ == "PRON" and \
                 word.morph.get("Gender") and \

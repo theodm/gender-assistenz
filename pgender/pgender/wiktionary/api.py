@@ -1,6 +1,19 @@
+import json
+
 import dataset
 import os
 from sqlalchemy import or_
+
+def find_verb_by_title(title):
+    db = dataset.connect('sqlite:///' + os.path.dirname(os.path.realpath(__file__)) + '/words.db')
+
+    words_table = db['verbs']
+
+    result = words_table.find_one(title=title)
+
+    db.close()
+
+    return result
 
 def find_by_title(title):
     db = dataset.connect('sqlite:///' + os.path.dirname(os.path.realpath(__file__)) + '/words.db')
@@ -8,6 +21,10 @@ def find_by_title(title):
     words_table = db['words']
 
     result = words_table.find_one(title=title)
+
+    if result:
+        result["maennliche_formen"] = json.loads(result["maennliche_formen"]) if result["maennliche_formen"] else []
+        result["weibliche_formen"] = json.loads(result["weibliche_formen"]) if result["weibliche_formen"] else []
 
     db.close()
 
@@ -18,7 +35,6 @@ def find_by_any_form(word):
 
     words_table = db['words']
 
-    # Get the column `city` from the dataset table:
     nominativ_singular = words_table.table.columns.nominativ_singular
     genitiv_singular = words_table.table.columns.genitiv_singular
     dativ_singular = words_table.table.columns.dativ_singular
@@ -41,6 +57,10 @@ def find_by_any_form(word):
     )
 
     result = words_table.find_one(clause)
+
+    if result:
+        result["maennliche_formen"] = json.loads(result["maennliche_formen"]) if result["maennliche_formen"] else []
+        result["weibliche_formen"] = json.loads(result["weibliche_formen"]) if result["weibliche_formen"] else []
 
     return result
 

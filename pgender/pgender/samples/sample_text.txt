@@ -1,0 +1,12 @@
+Dem US-Amerikaner David Schober wurden im Januar 2018 16,4 Bitcoin gestohlen - nach aktueller Umrechnungsrate haben diese einen Wert von fast 776.000 US-Dollar. Schober hat die Diebe nach monatelanger professioneller Suche, die 10.000 US-Dollar gekostet haben soll, ermitteln können.
+
+Die mutmaßlichen Täter sind zwei Briten, die zum Tatzeitpunkt minderjährig gewesen sein sollen. Krebs on Security zufolge hat Schober daher die Eltern der beiden Männer verklagt. Die Täter sollen mittlerweile Informatik an Unis in Großbritannien studieren.
+
+Die beiden Beschuldigten sollen über einen Reddit-Thread ein Programm veröffentlicht haben, das Schadcode enthielt. Schober hatte sich die Software heruntergeladen; das Prinzip basiert darauf, dass der Schadcode die Zwischenablage nach Krypto-Adressen durchsucht und diese gegen die der Diebe austauscht.
+Bitcoin wurden an mutmaßliche Täter transferiert
+
+Genau das passierte Schober, als er die 16,4 Bitcoin transferieren wollte. Anstatt die Kryptowährung an die von ihm kopierte Adresse zu schicken, wurde sie an die beiden mutmaßlichen Täter überwiesen. Die von Schober beauftragten Privatermittler konnten die Spur zu den beiden Beschuldigten zurückverfolgen.
+
+Außerdem soll einer der beiden auf Github danach gefragt haben, wie er an den privaten Key gelangen könne. Der andere Beschuldigte soll den Code der verwendeten Malware in seinem Github-Konto gespeichert haben.
+
+Interessanterweise argumentieren die verklagten Eltern nicht damit, dass die Jugendlichen die Tat nicht begangen hätten. Stattdessen soll die Tat verjährt sein, was Schobers Anwälte bestreiten: Ihr Mandant habe den Diebstahl erst später bemerkt, weshalb die Tat noch nicht verjährt sei.

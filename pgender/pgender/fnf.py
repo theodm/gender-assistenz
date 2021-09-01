@@ -75,7 +75,7 @@ def feminine_noun_forms(word, search_every_form=False):
     if not feminine_forms_in_db:
         return None
 
-    feminine_forms = json.loads(feminine_forms_in_db)
+    feminine_forms = feminine_forms_in_db
     feminine_forms = [find_by_title(f) for f in feminine_forms]
 
     if not feminine_forms:

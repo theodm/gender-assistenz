@@ -1,32 +1,40 @@
 import json
 
 from bottle import route, run, request, template, post, get
+from spacy import displacy
 
 from pgender._spacy import spacify_with_coref
 from pgender.fiw import find_initial_words
 from pgender.ntbg import needs_to_be_gendered
+from pgender.pipeline.full_pipeline import full_pipeline
+
 
 @post('/analyze')
 def index():
     body = request.body.read().decode("UTF-8")
 
-    doc = spacify_with_coref(body)
+    return json.dumps({"text": body, "infos": full_pipeline(body)})
 
-    iw = find_initial_words(doc)
+@get('/displacy')
+def _displacy():
+    doc = spacify_with_coref(request.query['doc'])
 
-    result = []
-    for f in iw:
-        ntbg = needs_to_be_gendered(doc, f[0])
+    return displacy.render(doc, style="dep")
 
-        result.append({
-            "from": f[0].idx,
-            "to": f[0].idx + len(f[0].text),
-            "shouldBeGendered": ntbg[0],
-            "reasonNotGendered": ntbg[1]
-        })
 
-    print(json.dumps({"text": body, "infos": result}))
-    return json.dumps({"text": body, "infos": result})
+@get('/tagging')
+def _tagging():
+    doc = spacify_with_coref(request.query['doc'])
+
+    result = "<table>"
+
+    for word in doc:
+        result = result + f"<tr><td>{word.text}</td><td>{word.pos_}</td><td>{word.tag_}</td><td>{word.morph}</td><td>{word.lemma_}</td></tr>"
+
+    result = result + "</table>"
+
+    return result
+
 
 
 run(host='localhost', port=8080)

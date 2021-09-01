@@ -1,0 +1,12 @@
+@import "tailwindcss/dist/base.css";
+@import "tailwindcss/dist/components.css";
+@import "tailwindcss/dist/utilities.css";
+
+
+/* 
+ToDo: Besser die folgenden Imports nutzen,
+funktioniert aber leider nicht. (https://github.com/snowpackjs/snowpack/issues/3461)
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities; */

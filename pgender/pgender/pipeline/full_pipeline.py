@@ -20,18 +20,45 @@ def full_pipeline(text):
     #
     result = []
     for word in initial_words:
-        ntbg = needs_to_be_gendered(doc, word[0])
+        try:
+            ntbg = needs_to_be_gendered(doc, word[0])
+        except Exception as e:
+            result.append({
+                "from": word[0].idx,
+                "to": word[0].idx + len(word[0].text),
+                "possibleCorrections": [],
+                "shouldBeGendered": False,
+                "reasonNotGendered": "Fehler: " + str(e),
+                "errors": [str(e)]
+            })
+
+            continue
 
         if ntbg[0]:
             #
             # 3. Schritt: Erstellung von Korrekturvorschlägen.
             #
+            try:
+                possible_corrections, errors = generate_possible_corrections(word[0])
+            except Exception as e:
+                result.append({
+                    "from": word[0].idx,
+                    "to": word[0].idx + len(word[0].text),
+                    "possibleCorrections": [],
+                    "shouldBeGendered": False,
+                    "reasonNotGendered": "Fehler: " + str(e),
+                    "errors": [str(e)]
+                })
+
+                continue
+
             result.append({
                 "from": word[0].idx,
                 "to": word[0].idx + len(word[0].text),
-                "possibleCorrections": generate_possible_corrections(word[0]),
+                "possibleCorrections": possible_corrections,
                 "shouldBeGendered": ntbg[0],
-                "reasonNotGendered": []
+                "reasonNotGendered": [],
+                "errors": errors
             })
 
             continue
@@ -41,7 +68,8 @@ def full_pipeline(text):
             "to": word[0].idx + len(word[0].text),
             "possibleCorrections": [],
             "shouldBeGendered": ntbg[0],
-            "reasonNotGendered": ntbg[1]
+            "reasonNotGendered": ntbg[1],
+            "errors": []
         })
 
     return result

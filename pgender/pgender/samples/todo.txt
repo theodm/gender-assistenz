@@ -1,0 +1,131 @@
+Der Benutzer redete mit seinem Computer.
+Sollte ein Dienstanbieter die Kanäle einzeln weitervermieten , sind damit nach den Vorstellungen der Telekom pro Kanal 160 Mark an Telekom-Vorleistungsgebühren fällig - , eine Summe , die weit über den von einigen Anbietern wie AOL geforderten Endkundentarifen von rund 50 Mark für eine Flatrate liegt .
+
+2021-09-11 18:08:05.680 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:225 - Konnte Korrekturvorschlag '*' nicht erstellen: Zu dem Pronomen Wir mit dem Tag PPER wurde keine andere Form gefunden.
+2021-09-11 18:08:05.681 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:246 - Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Zu dem Pronomen Wir mit dem Tag PPER wurde keine andere Form gefunden.
+2021-09-11 18:08:05.681 | INFO     | __main__:<module>:23 - 174: " Wir sind weiterhin davon überzeugt , dass die Angaben korrekt sind " , sagte ein Unternehmens-Sprecher gegenüber heise online .
+2021-09-11 18:08:05.681 | INFO     | __main__:<module>:24 - ["Konnte Korrekturvorschlag '*' nicht erstellen: Zu dem Pronomen Wir mit dem Tag PPER wurde keine andere Form gefunden.", "Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Zu dem Pronomen Wir mit dem Tag PPER wurde keine andere Form gefunden."]
+2021-09-11 18:09:08.697 | INFO     | pgender.pipeline.correction.verb.change_verb_form:change_verb_form:13 - lex_target_verb not found: anbietet
+2021-09-11 18:09:08.697 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:246 - Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: anbietet
+2021-09-11 18:09:08.730 | INFO     | __main__:<module>:23 - 580: Die Regulierungsbehörde für Telekommunikation und Post ( RegTP ) hat entschieden , dass die Telekom den XXL-Pauschaltarif weiter anbieten darf - unter der Voraussetzung , dass der Rosa Riese das Angebot nicht nur für ISDN- , sondern auch für Analog-Zugänge anbietet .
+2021-09-11 18:09:08.730 | INFO     | __main__:<module>:24 - ["Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: anbietet"]
+2021-09-11 18:09:10.249 | INFO     | pgender.pipeline.correction.verb.change_verb_form:change_verb_form:13 - lex_target_verb not found: seien
+2021-09-11 18:09:10.249 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:246 - Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: seien
+2021-09-11 18:09:10.282 | INFO     | __main__:<module>:23 - 592: Ein Sprecher des Ministeriums betonte heute , dass die Vorschläge in dieser Richtung noch nicht abschließend diskutiert seien - wenn auch die Diskussion nicht gerade mit aller Kraft vorangetrieben werde .
+2021-09-11 18:09:10.282 | INFO     | __main__:<module>:24 - ["Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: seien"]
+2021-09-11 18:09:12.204 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:246 - Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: list index out of range
+2021-09-11 18:09:12.204 | INFO     | __main__:<module>:23 - 601: Betroffen waren laut BerlinWeb-Inhaber Clemens Gerth zirka 10.000 Kunden , die ihre Web-Domains über den Berliner Anbieter laufen lassen .
+2021-09-11 18:09:12.204 | INFO     | __main__:<module>:24 - ["Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: list index out of range"]
+2021-09-11 18:09:23.967 | INFO     | pgender.pipeline.correction.verb.change_verb_form:change_verb_form:13 - lex_target_verb not found: zurückzahlt
+2021-09-11 18:09:23.968 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:246 - Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: zurückzahlt
+2021-09-11 18:09:23.968 | INFO     | __main__:<module>:23 - 693: Damit will das insolvente Unternehmen erreichen , dass der rosa Riese 7,3 Millionen Mark zurückzahlt .
+2021-09-11 18:09:23.968 | INFO     | __main__:<module>:24 - ["Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: zurückzahlt"]
+2021-09-11 18:10:14.948 | INFO     | pgender.pipeline.correction.verb.change_verb_form:change_verb_form:13 - lex_target_verb not found: sind
+2021-09-11 18:10:14.948 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:246 - Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: sind
+2021-09-11 18:10:14.948 | INFO     | __main__:<module>:23 - 1030: " Die Auflagen sind kein Problem " , sagte TelDaFax-Sprecher .
+2021-09-11 18:10:14.948 | INFO     | __main__:<module>:24 - ["Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: sind"]
+2021-09-11 18:11:03.167 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:225 - Konnte Korrekturvorschlag '*' nicht erstellen: Zu dem Pronomen Wir mit dem Tag PPER wurde keine andere Form gefunden.
+2021-09-11 18:11:03.167 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:246 - Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Zu dem Pronomen Wir mit dem Tag PPER wurde keine andere Form gefunden.
+2021-09-11 18:11:03.211 | INFO     | __main__:<module>:23 - 1309: " Wir gehen zurück zum Monopol " , sagte der Präsident des Branchenverbandes VATM , Joachim Dreyer , in Berlin .
+2021-09-11 18:11:03.211 | INFO     | __main__:<module>:24 - ["Konnte Korrekturvorschlag '*' nicht erstellen: Zu dem Pronomen Wir mit dem Tag PPER wurde keine andere Form gefunden.", "Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Zu dem Pronomen Wir mit dem Tag PPER wurde keine andere Form gefunden."]
+2021-09-11 18:11:07.524 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:246 - Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: list index out of range
+2021-09-11 18:11:07.560 | INFO     | __main__:<module>:23 - 1339: Nach Angaben der Freiburger " Aktionärsgemeinschaft Metabox " soll ein Berliner Immobilienunternehmer Kopf der Investorengruppe sein .
+2021-09-11 18:11:07.560 | INFO     | __main__:<module>:24 - ["Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: list index out of range"]
+2021-09-11 18:13:27.337 | INFO     | pgender.pipeline.correction.verb.change_verb_form:change_verb_form:13 - lex_target_verb not found: Verzichtet
+2021-09-11 18:13:27.337 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:246 - Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: Verzichtet
+2021-09-11 18:13:27.515 | INFO     | __main__:<module>:23 - 2142: " Verzichtet der Handybesitzer im Vertrag auf diese Speicherung , muss er beweisen , ob er ein Gespräch geführt hat oder nicht " , sagte der Sprecher .
+2021-09-11 18:13:27.515 | INFO     | __main__:<module>:24 - ["Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: Verzichtet"]
+2021-09-11 18:13:39.745 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:246 - Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: list index out of range
+2021-09-11 18:13:39.854 | INFO     | __main__:<module>:23 - 2215: In zwei alljährlichen international anerkannten Tests der Unis von Mannheim und Tennessee wird der Chemnitzer Rechner auf den vorderen Plätzen unter den Super-Computern sein , ist sich Informatiker Mike Becher von der Anwender-Gruppe des Uni-Rechenzentrums sicher .
+2021-09-11 18:13:39.854 | INFO     | __main__:<module>:24 - ["Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: list index out of range"]
+2021-09-11 18:13:40.227 | INFO     | pgender.pipeline.correction.verb.change_verb_form:change_verb_form:13 - lex_target_verb not found: wäre
+2021-09-11 18:13:40.227 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:246 - Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: wäre
+2021-09-11 18:13:40.457 | INFO     | pgender.pipeline.correction.verb.change_verb_form:change_verb_form:13 - lex_target_verb not found: ist
+2021-09-11 18:13:40.457 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:246 - Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: ist
+2021-09-11 18:13:40.457 | INFO     | __main__:<module>:23 - 2217: Damit wäre der Rechner der schnellste Cluster-Computer in Europa und das zweitschnellste Cluster-Sytem der Welt - nur ein Selbstbaurechner aus den USA , der CPlant vom Sandia National Laboratory ist noch schneller .
+2021-09-11 18:13:40.457 | INFO     | __main__:<module>:24 - ["Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: wäre"]
+2021-09-11 18:13:40.457 | INFO     | __main__:<module>:23 - 2217: Damit wäre der Rechner der schnellste Cluster-Computer in Europa und das zweitschnellste Cluster-Sytem der Welt - nur ein Selbstbaurechner aus den USA , der CPlant vom Sandia National Laboratory ist noch schneller .
+2021-09-11 18:13:40.457 | INFO     | __main__:<module>:24 - ["Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: ist"]
+2021-09-11 18:13:41.463 | INFO     | pgender.pipeline.correction.verb.change_verb_form:change_verb_form:13 - lex_target_verb not found: war
+2021-09-11 18:13:41.463 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:246 - Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: war
+2021-09-11 18:13:41.544 | INFO     | __main__:<module>:23 - 2221: Ein alter Rechner von 1994 ( Parsytec GC 128 PowerPlus mit 128 Prozessoren ) war bereits veraltet und zudem nach einem Kabelbrand nur noch eingeschränkt zu gebrauchen .
+2021-09-11 18:13:41.544 | INFO     | __main__:<module>:24 - ["Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: war"]
+2021-09-11 18:14:01.386 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:225 - Konnte Korrekturvorschlag '*' nicht erstellen: Zu dem Pronomen Wir mit dem Tag PPER wurde keine andere Form gefunden.
+2021-09-11 18:14:01.386 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:246 - Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Zu dem Pronomen Wir mit dem Tag PPER wurde keine andere Form gefunden.
+2021-09-11 18:14:01.386 | INFO     | __main__:<module>:23 - 2324: " Wir gehen auf den vollen Centbetrag " , sagt ein Firmensprecher .
+2021-09-11 18:14:01.386 | INFO     | __main__:<module>:24 - ["Konnte Korrekturvorschlag '*' nicht erstellen: Zu dem Pronomen Wir mit dem Tag PPER wurde keine andere Form gefunden.", "Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Zu dem Pronomen Wir mit dem Tag PPER wurde keine andere Form gefunden."]
+2021-09-11 18:14:34.362 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:225 - Konnte Korrekturvorschlag '*' nicht erstellen: Zu dem Pronomen Man mit dem Tag PIS wurde keine andere Form gefunden.
+2021-09-11 18:14:34.362 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:246 - Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Zu dem Pronomen Man mit dem Tag PIS wurde keine andere Form gefunden.
+2021-09-11 18:14:34.412 | INFO     | __main__:<module>:23 - 2512: Man könne sich kein Bild von Met@box machen , sagte laut dpa der Sprecher der Deutschen Schutzvereinigung für Wertpapierbesitz .
+2021-09-11 18:14:34.412 | INFO     | __main__:<module>:24 - ["Konnte Korrekturvorschlag '*' nicht erstellen: Zu dem Pronomen Man mit dem Tag PIS wurde keine andere Form gefunden.", "Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Zu dem Pronomen Man mit dem Tag PIS wurde keine andere Form gefunden."]
+2021-09-11 18:14:45.053 | INFO     | pgender.pipeline.correction.verb.change_verb_form:change_verb_form:13 - lex_target_verb not found: ist
+2021-09-11 18:14:45.053 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:246 - Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: ist
+2021-09-11 18:14:45.053 | INFO     | __main__:<module>:23 - 2576: " Die Ausnutzung der rechtlichen Mittel ist vollkommen legitim und dient letztlich dem Schutz der Mitarbeiter und Aktionäre " sagte ein Unternehmenssprecher gegenüber heise online .
+2021-09-11 18:14:45.053 | INFO     | __main__:<module>:24 - ["Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: ist"]
+2021-09-11 18:14:57.740 | INFO     | pgender.pipeline.correction.verb.change_verb_form:change_verb_form:13 - lex_target_verb not found: ist
+2021-09-11 18:14:57.740 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:246 - Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: ist
+2021-09-11 18:14:58.249 | INFO     | __main__:<module>:23 - 2653: Der finnische Handyhersteller ist Hauptaktionär des Reifenproduzenten .
+2021-09-11 18:14:58.249 | INFO     | __main__:<module>:24 - ["Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: ist"]
+2021-09-11 18:16:36.237 | INFO     | pgender.pipeline.correction.verb.change_verb_form:change_verb_form:13 - lex_target_verb not found: festlegte
+2021-09-11 18:16:36.253 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:246 - Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: festlegte
+2021-09-11 18:16:36.416 | INFO     | __main__:<module>:23 - 3042: In dieser Frage hatte MP3.com in der Vergangenheit bereits einen Teilerfolg verbuchen können , als ein Bundesrichter festlegte , dass der Schaden , der entstanden war , pro CD errechnet würde und nicht pro MP3-Song .
+2021-09-11 18:16:36.416 | INFO     | __main__:<module>:24 - ["Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: festlegte"]
+2021-09-11 18:17:15.094 | INFO     | pgender.pipeline.correction.verb.change_verb_form:change_verb_form:13 - lex_target_verb not found: ist
+2021-09-11 18:17:15.094 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:246 - Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: ist
+2021-09-11 18:17:15.094 | INFO     | __main__:<module>:23 - 3215: Außerdem ist noch der ehemalige Chef von Hewlett-Packard , Lew Platt , in der Liste vertreten .
+2021-09-11 18:17:15.094 | INFO     | __main__:<module>:24 - ["Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: ist"]
+2021-09-11 18:17:27.544 | INFO     | pgender.pipeline.correction.verb.change_verb_form:change_verb_form:13 - lex_target_verb not found: auffordert
+2021-09-11 18:17:27.544 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:246 - Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: auffordert
+2021-09-11 18:17:27.670 | INFO     | __main__:<module>:23 - 3265: Ziemlich dreist geht derzeit der Absender einer englischsprachigen E-Mail vor , der AOL-Kunden dazu auffordert , ihre Kreditkartennummern neu einzugeben ; angeblich sei die alte nicht länger gültig .
+2021-09-11 18:17:27.670 | INFO     | __main__:<module>:24 - ["Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: auffordert"]
+2021-09-11 18:17:47.483 | INFO     | pgender.pipeline.correction.verb.change_verb_form:change_verb_form:13 - lex_target_verb not found: ist
+2021-09-11 18:17:47.483 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:246 - Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: ist
+2021-09-11 18:17:47.552 | INFO     | __main__:<module>:23 - 3336: In Übersee allerdings liegt Nintendo vorne : hier soll der Game Boy Advance im Sommer kommen , der WonderSwan-Nachfolger ist erst für den nächsten Herbst angekündigt .
+2021-09-11 18:17:47.552 | INFO     | __main__:<module>:24 - ["Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: ist"]
+2021-09-11 18:18:49.201 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:225 - Konnte Korrekturvorschlag '*' nicht erstellen: list index out of range
+2021-09-11 18:18:49.201 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:246 - Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: list index out of range
+2021-09-11 18:18:49.201 | INFO     | __main__:<module>:23 - 3523: Manch ein Kenner der Szene klagt schon , ein solch feststehendes und kompatibles Format wie die Compact Disc werde es wohl nie wieder geben .
+2021-09-11 18:18:49.201 | INFO     | __main__:<module>:24 - ["Konnte Korrekturvorschlag '*' nicht erstellen: list index out of range", "Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: list index out of range"]
+2021-09-11 18:19:41.099 | INFO     | pgender.pipeline.correction.verb.change_verb_form:change_verb_form:13 - lex_target_verb not found: sei
+2021-09-11 18:19:41.099 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:246 - Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: sei
+2021-09-11 18:19:41.226 | INFO     | __main__:<module>:23 - 3742: Eine Sprecherin der Deutschen Börse AG betonte , jeder Anleger sei gehalten , die bei der Durchführung der Transaktion angezeigten echten Kurswerte zu beachten , nur die sind verbindlich .
+2021-09-11 18:19:41.226 | INFO     | __main__:<module>:24 - ["Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: sei"]
+2021-09-11 18:19:49.452 | INFO     | pgender.pipeline.correction.verb.change_verb_form:change_verb_form:13 - lex_target_verb not found: sind
+2021-09-11 18:19:49.452 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:246 - Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: sind
+2021-09-11 18:19:49.530 | INFO     | __main__:<module>:23 - 3782: " Die Sparkassen in Baden-Württemberg sind bisher überhaupt nicht an pulsiv beteiligt " , sagte der Präsident des Sparkassenverbands Baden-Württemberg , Heinrich Haasis .
+2021-09-11 18:19:49.530 | INFO     | __main__:<module>:24 - ["Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: sind"]
+2021-09-11 18:20:14.128 | INFO     | pgender.pipeline.correction.verb.change_verb_form:change_verb_form:13 - lex_target_verb not found: ist
+2021-09-11 18:20:14.128 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:246 - Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: ist
+2021-09-11 18:20:14.212 | INFO     | __main__:<module>:23 - 3875: Der voraussichtlich ab Juni erhältliche Plextor-Brenner mit IDE-Interface ist mit dem von Sanyo entwickelten Schutzmechanismus namens " Buffer UnderRuN Proof " ausgestattet .
+2021-09-11 18:20:14.212 | INFO     | __main__:<module>:24 - ["Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: ist"]
+2021-09-11 18:20:37.956 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:246 - Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: list index out of range
+2021-09-11 18:20:38.009 | INFO     | __main__:<module>:23 - 3976: Der Frankfurter Software-Spezialist für die Reisebranche I:FAO räumte am Mittwoch ein , bei seiner jüngsten Pflichtmitteilung zum dritten Quartal 2000 unrichtige Informationen verbreitet zu haben .
+2021-09-11 18:20:38.009 | INFO     | __main__:<module>:24 - ["Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: list index out of range"]
+2021-09-11 18:22:45.385 | INFO     | pgender.pipeline.correction.verb.change_verb_form:change_verb_form:13 - lex_target_verb not found: sei
+2021-09-11 18:22:45.385 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:246 - Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: sei
+2021-09-11 18:22:45.385 | INFO     | __main__:<module>:23 - 4446: Der Hersteller sei auch weiterhin an einer Zusammenarbeit interessiert .
+2021-09-11 18:22:45.385 | INFO     | __main__:<module>:24 - ["Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: sei"]
+2021-09-11 18:22:49.560 | INFO     | pgender.pipeline.correction.verb.change_verb_form:change_verb_form:13 - lex_target_verb not found: sei
+2021-09-11 18:22:49.560 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:246 - Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: sei
+2021-09-11 18:22:49.560 | INFO     | __main__:<module>:23 - 4468: Er sei davon ausgegangen , mit den Handbüchern die Lizenzrechte erworben zu haben , sagte der Rechtsanwalt der Firma zu c't .
+2021-09-11 18:22:49.560 | INFO     | __main__:<module>:24 - ["Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: sei"]
+2021-09-11 18:23:26.178 | INFO     | __main__:<module>:23 - 4615: " Der Messeführer kann jedoch nicht nur über das Internet , sondern auch direkt vor Ort in den Handheld geladen werden " , sagte Oliver Leheis , Sprecher der Drupa Düsseldorf , zu c't .
+2021-09-11 18:23:26.178 | INFO     | __main__:<module>:24 - ["'NoneType' object has no attribute 'lower'"]
+2021-09-11 18:23:32.536 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:225 - Konnte Korrekturvorschlag '*' nicht erstellen: Zu dem Pronomen Wir mit dem Tag PPER wurde keine andere Form gefunden.
+2021-09-11 18:23:32.536 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:246 - Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Zu dem Pronomen Wir mit dem Tag PPER wurde keine andere Form gefunden.
+2021-09-11 18:23:32.536 | INFO     | __main__:<module>:23 - 4643: " Wir glauben , dass sich der Markt und die Technik so rasant weiterentwickeln , dass es keinem Unternehmen gelingen wird , im Internet eine Monopolstellung zu erlangen " , meint ein Sprecher von Sprint .
+2021-09-11 18:23:32.536 | INFO     | __main__:<module>:24 - ["Konnte Korrekturvorschlag '*' nicht erstellen: Zu dem Pronomen Wir mit dem Tag PPER wurde keine andere Form gefunden.", "Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Zu dem Pronomen Wir mit dem Tag PPER wurde keine andere Form gefunden."]
+2021-09-11 18:23:33.109 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:225 - Konnte Korrekturvorschlag '*' nicht erstellen: Zu dem Pronomen Wir mit dem Tag PPER wurde keine andere Form gefunden.
+2021-09-11 18:23:33.109 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:246 - Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Zu dem Pronomen Wir mit dem Tag PPER wurde keine andere Form gefunden.
+2021-09-11 18:23:33.109 | INFO     | __main__:<module>:23 - 4645: " Wir sind zuversichtlich , dass nach Abschluss der Untersuchungen im Herbst die Entscheidung positiv ausfallen wird " , kommentierte der Sprecher von Sprint .
+2021-09-11 18:23:33.109 | INFO     | __main__:<module>:24 - ["Konnte Korrekturvorschlag '*' nicht erstellen: Zu dem Pronomen Wir mit dem Tag PPER wurde keine andere Form gefunden.", "Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Zu dem Pronomen Wir mit dem Tag PPER wurde keine andere Form gefunden."]
+2021-09-11 18:23:38.196 | INFO     | pgender.pipeline.correction.verb.change_verb_form:change_verb_form:13 - lex_target_verb not found: ist
+2021-09-11 18:23:38.196 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:246 - Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: ist
+2021-09-11 18:23:38.196 | INFO     | __main__:<module>:23 - 4670: " Der Kunde ist meistens neugierig auf neue Produkte " , meint Andrea Stuhl , Geschäftsführerin einer gleichnamigen Firma für Regelsysteme .
+2021-09-11 18:23:38.196 | INFO     | __main__:<module>:24 - ["Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: ist"]
+2021-09-11 18:24:36.728 | INFO     | pgender.pipeline.correction.verb.change_verb_form:change_verb_form:13 - lex_target_verb not found: anmeldet
+2021-09-11 18:24:36.728 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:246 - Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: anmeldet
+2021-09-11 18:24:36.797 | INFO     | __main__:<module>:23 - 4852: Ein Sicherungsschein bewahrt Urlauber vor finanziellen Verlusten , wenn der Veranstalter beispielsweise Konkurs anmeldet .
+2021-09-11 18:24:36.797 | INFO     | __main__:<module>:24 - ["Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Das Verb konnte im Lexikon nicht gefunden werden: anmeldet"]
+
+Process finished with exit code -1

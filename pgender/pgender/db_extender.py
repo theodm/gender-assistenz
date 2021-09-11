@@ -75,7 +75,7 @@ def feminine_noun_forms_and_convert(word):
     if not feminine_forms_in_db:
         return []
 
-    feminine_forms = [find_in_db_and_convert(f) for f in feminine_forms_in_db]
+    feminine_forms = [x for x in [find_in_db_and_convert(f) for f in feminine_forms_in_db] if x is not None]
 
     if not feminine_forms:
         return []

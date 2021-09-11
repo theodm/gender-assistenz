@@ -3,7 +3,9 @@
 import loguru
 from charsplit import splitter, Splitter
 
+from pgender.db_extender import find_in_db_and_convert
 from pgender.fnf import has_feminine_noun_form, feminine_noun_forms, find_in_db
+from pgender.utils.string import remove_prefix
 from pgender.wordlib import follow_child_dep, follow_parent_dep, follow_child_dep_single_or_none
 from loguru import logger
 
@@ -45,6 +47,42 @@ def _feminine_noun_forms(word):
 def _has_feminine_noun_form(word):
     return _feminine_noun_forms(word)
 
+#
+# Gibt an, ob das Wort [feminine_form] eine weibliche Form von [of_word]
+# ist. Auch nur Übereinstimmungen des letzten Teil eines zusammengesetzten Nomens werden gefunden.
+#
+# Es ist gedacht um im Falle, dass beide Formen explizit genannt werden, keinen Korrekturvorschlag zu
+# erstellen.
+#
+# Bsp.:
+#  - [Wissenschaftlerin, Wissenschaftler] -> true
+#  - [Raketenwissenschaftlerin, Wissenschaftler] -> true
+#  - [Raktenwissenschaftlerin, -Wissenschaftler] -> true (Bsp: Rakentenwissenschaftlerinnen und -Wissenschaftler)
+#
+# of_word
+def _is_feminine_noun_form_of_extended(feminine_form, of_word):
+    #
+    # Wort normalisieren, es könnte in folgender Konstruktion stehen: Rakentenwissenschaftlerinnen und -Wissenschaftler
+    #
+    lex_ff = find_in_db_and_convert(feminine_form)
+
+    if not lex_ff:
+        return False
+
+    fnf = _feminine_noun_forms(of_word)
+
+    if lex_ff["title"].lower() in [x["title"].lower() for x in fnf]:
+        return True
+
+    splits = splitter.split_compound(lex_ff["title"])
+
+    if splits:
+        if splits[0][-1].lower() in [x["title"].lower() for x in fnf]:
+            return True
+
+    return False
+
+
 def _is_feminine_noun_form_of(feminine_form, of_word):
     db = find_in_db(feminine_form)
 
@@ -85,6 +123,7 @@ def needs_to_be_gendered(doc, word, check_coref=True):
         if not _has_feminine_noun_form(word):
             return False, [(NO_FEMININE_FORM, f"Keine feminine Wortform gefunden: {word}")]
 
+    #
     # Und-Konjunktion
     #
     # Sowohl die männliche Form als auch die weibliche Form wird genannt. Also muss
@@ -94,6 +133,7 @@ def needs_to_be_gendered(doc, word, check_coref=True):
     # _______________     ____________________
     #
     # Hier die Richtung: Wissenschaftler -> und -> Wissenschaftlerinnen
+    #
     conjunctions = follow_child_dep(word, ["cd", "cj"])
     while conjunctions:
         new_conjunctions = []
@@ -105,12 +145,14 @@ def needs_to_be_gendered(doc, word, check_coref=True):
 
         conjunctions = new_conjunctions
 
+    #
     # Und-Konjunktion
     #
     # Wissenschaftlerinnen und Wissenschaftler gehen ein Eis essen.
     # ____________________     _______________
     #
     # Hier die Richtung: Wissenschaftlerinnen -> Wissenschaftler
+    #
     conj = word
     while True:
         conj = follow_parent_dep(conj, ["cj", "cd"])
@@ -118,10 +160,8 @@ def needs_to_be_gendered(doc, word, check_coref=True):
         if not conj:
             break
 
-        if conj.pos_ == "NOUN" and _is_feminine_noun_form_of(conj, word):
+        if conj.pos_ == "NOUN" and _is_feminine_noun_form_of_extended(conj, word):
             return False, [(BOTH_FORMS, "Beide Formen")]
-
-
 
 
     # Das Nomen wird durch einen Namen spezifiziert,
@@ -142,7 +182,7 @@ def needs_to_be_gendered(doc, word, check_coref=True):
     noun_kernel_modifiers = follow_child_dep(word, "nk")
 
     for nkm in noun_kernel_modifiers:
-        result = needs_to_be_gendered(doc, nkm)
+        result = needs_to_be_gendered(doc, nkm, check_coref)
 
         if not result[0]:
             return False, [(NOUN_KERNEL_NAME_FOUND, f"Noun-Kernel weist auf Eigenname hin: {nkm}")] + result[1]
@@ -164,7 +204,7 @@ def needs_to_be_gendered(doc, word, check_coref=True):
         #    gendern wir nicht.
         subject = follow_child_dep_single_or_none(kopula_verb, "sb")
         if subject:
-            result = needs_to_be_gendered(doc, subject)
+            result = needs_to_be_gendered(doc, subject, check_coref)
 
             if not result[0]:
                 return False, [(KOPULA_SENTENCE, f"Kopula-Satzbau: {subject} (Kopula-Verb: {kopula_verb})")] + result[1]
@@ -178,7 +218,7 @@ def needs_to_be_gendered(doc, word, check_coref=True):
     #                                                  ___________________  _____
     app = follow_parent_dep(word, "app")
     if app:
-        result = needs_to_be_gendered(doc, app)
+        result = needs_to_be_gendered(doc, app, check_coref)
 
         if not result[0]:
             return False, [(APPOSITION, f"Einschubsatz: {app}")] + result[1]
@@ -191,7 +231,7 @@ def needs_to_be_gendered(doc, word, check_coref=True):
     # Bsp.: Hinter der neuen Firma steht unter anderem Lucent Technologies , einer der größten Anbieter von Equipment für Netzwerke und Telekommunikation .
     ag = follow_parent_dep(word, "ag")
     if ag and ag.pos_ == "PRON":
-        result = needs_to_be_gendered(doc, ag)
+        result = needs_to_be_gendered(doc, ag, check_coref)
 
         if not result[0]:
             return False, [(GENITIVE_ATTRIBUTE, f"Genitiv-Attribut: {ag} (für: {word})")] + result[1]
@@ -211,7 +251,7 @@ def needs_to_be_gendered(doc, word, check_coref=True):
         parent_of_relative_clause = follow_parent_dep(parent_of_subject, "rc")
 
         if parent_of_relative_clause:
-            result = needs_to_be_gendered(doc, parent_of_relative_clause)
+            result = needs_to_be_gendered(doc, parent_of_relative_clause, check_coref)
 
             if not result[0]:
                 return False, [(RELATIVE_CLAUSE, f"Pronomen des Relativsatzes: {result} (für: {word})")] + result[1]
@@ -221,7 +261,7 @@ def needs_to_be_gendered(doc, word, check_coref=True):
         # Coreference Chains
         #
         #
-        doc._.coref_chains.print()
+        #doc._.coref_chains.print()
         for chain in doc._.coref_chains:
             mention_indices = [x.root_index for x in chain]
 

@@ -1,6 +1,6 @@
 import json
 
-from bottle import route, run, request, template, post, get
+from bottle import route, run, request, template, post, get, static_file
 from spacy import displacy
 
 from pgender._spacy import spacify_with_coref
@@ -14,6 +14,7 @@ def index():
     body = request.body.read().decode("UTF-8")
 
     return json.dumps({"text": body, "infos": full_pipeline(body)})
+
 
 @get('/displacy')
 def _displacy():
@@ -35,6 +36,10 @@ def _tagging():
 
     return result
 
+
+@route('/<filepath:path>')
+def server_static(filepath):
+    return static_file(filepath, root="C:\\Users\\Theo\\Desktop\\Projekte\\ggender\\pgender\\client\\build")
 
 
 run(host='localhost', port=8080)

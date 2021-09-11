@@ -1,5 +1,7 @@
 import json
 
+from pgender.utils.list import filter_none
+from pgender.utils.string import remove_prefix
 from pgender.wiktionary.api import find_by_title, find_by_any_form
 
 
@@ -62,6 +64,12 @@ def feminine_noun_forms(word, search_every_form=False):
     if not isinstance(word, str):
         lemma = word.lemma_
 
+    #
+    # In einigen Satzkonstruktionen steht einem Nomen ein "-" voran. Dieses ist nicht zu berücksichtigen.
+    # Bsp.: Wissenschaftlerinnen und -Wissenschaftler
+    #
+    lemma = remove_prefix(lemma, "-")
+
     if search_every_form:
         lemma_in_db = find_by_any_form(lemma)
     else:
@@ -76,7 +84,7 @@ def feminine_noun_forms(word, search_every_form=False):
         return None
 
     feminine_forms = feminine_forms_in_db
-    feminine_forms = [find_by_title(f) for f in feminine_forms]
+    feminine_forms = filter_none([find_by_title(f) for f in feminine_forms])
 
     if not feminine_forms:
         return None

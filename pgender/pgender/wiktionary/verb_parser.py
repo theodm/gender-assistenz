@@ -128,8 +128,26 @@ for event, page_tag in ET.iterparse("dewiktionary-20210601-pages-articles.xml", 
     if template['template_name'] == "unregelmäßig":
         # https://de.wiktionary.org/wiki/Vorlage:Deutsch_Verb_unregelm%C3%A4%C3%9Fig
 
+        def unregelmaessig_praes_akt_ind_1_sing():
+            if t('Indikativ Präsens (ich)'):
+                return t('Indikativ Präsens (ich)')
+
+            if len(t('10')) > 0:
+                if t('10') in ["dürfen", "können", "mögen", "müssen", "sollen", "wissen", "wollen"]:
+                    if len(t('6')) > 0:
+                        return t('6')
+                    else:
+                        return t('2')
+                else:
+                    if len(t('6')) > 0:
+                        return t('6')
+                    else:
+                        return t('2') + "e"
+
+            return t('2') + "e"
+
         # Präsens - Aktiv - Indikativ
-        result["praes_akt_ind_1_sing"] = f"{t('2')}e"
+        result["praes_akt_ind_1_sing"] = unregelmaessig_praes_akt_ind_1_sing()
         result["praes_akt_ind_2_sing"] = f"{t('2')}st"
         result["praes_akt_ind_3_sing"] = f"{t('2')}t"
         result["praes_akt_ind_1_plur"] = f"{t('2')}en"

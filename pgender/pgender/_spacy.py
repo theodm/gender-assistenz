@@ -22,11 +22,12 @@ def displayc(text):
     doc = spacify(text)
 
     displacy.serve(doc, style="dep")
+
 #
 # for word in doc:
 #     print(word.text + "," + word.tag_ + "," + word.pos_)
 #
-# print(spacy.explain("nk"))
+print(spacy.explain("ag"))
 #
 #
 #

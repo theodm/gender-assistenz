@@ -30,7 +30,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="Git.Stage.Ui.Settings">
     <option name="ignoredFilesShown" value="true" />
@@ -56,7 +56,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JSON&#10;JavaScript&#10;XML&#10;TEXT" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pgender/corpus_test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -213,6 +213,7 @@
       <workItem from="1630953416215" duration="3032000" />
       <workItem from="1631029587253" duration="76463000" />
       <workItem from="1631726284336" duration="516000" />
+      <workItem from="1631726849869" duration="1019000" />
     </task>
     <task id="LOCAL-00001" summary="Weitere Arbeiten">
       <created>1628951745572</created>
@@ -249,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631726705112</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Aufräumen #1">
+      <created>1631726933515</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1631726933515</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,7 +277,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Weitere Arbeiten" />
-    <option name="LAST_COMMIT_MESSAGE" value="Weitere Arbeiten" />
+    <MESSAGE value="Aufräumen #1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aufräumen #1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

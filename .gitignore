@@ -4,3 +4,6 @@ tiger_release_aug07.corrected.16012013.xml
 tiger_release_aug07.corrected.16012013.conll09
 __pycache__
 *.conllu
+/.ipynb_checkpoints/
+/.idea
+.pytest_cache

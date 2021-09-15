@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/.idea/dataSources/f1b70cc7-171d-4acf-b676-e0625f51344b" />
+      <excludeFolder url="file://$MODULE_DIR$/pipeline/correction/adj/.pytest_cache" />
+      <excludeFolder url="file://$MODULE_DIR$/pipeline/correction/verb/.pytest_cache" />
+      <excludeFolder url="file://$MODULE_DIR$/pipeline/correction/.pytest_cache" />
+      <excludeFolder url="file://$MODULE_DIR$/pipeline/.pytest_cache" />
+      <excludeFolder url="file://$MODULE_DIR$/word_usage_analyzer/.pytest_cache" />
+      <excludeFolder url="file://$MODULE_DIR$/word_usage_analyzer/corpora" />
+      <excludeFolder url="file://$MODULE_DIR$/.pytest_cache" />
+      <excludeFolder url="file://$MODULE_DIR$/corpus_test" />
+    </content>
     <orderEntry type="jdk" jdkName="Python 3.9" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-  </component>
-  <component name="TestRunnerService">
-    <option name="PROJECT_TEST_RUNNER" value="pytest" />
   </component>
 </module>

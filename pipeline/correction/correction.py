@@ -1,13 +1,13 @@
 import loguru
 
-from pgender.db_extender import feminine_noun_forms_and_convert
-from pgender.fnf import feminine_noun_forms
-from pgender.pipeline.correction.adj.change_adj_form import change_adj_form
-from pgender.pipeline.correction.noun.select_noun_form import select_noun_form
-from pgender.pipeline.correction.pron_art.select_pron_form import select_pron_art_form
-from pgender.pipeline.correction.verb.change_verb_form import change_verb_form
-from pgender.wordlib import follow_parent_dep, follow_child_dep, follow_child_dep_single_or_none
-from pgender.wordlib2 import find_verb, find_adj, find_art_and_pron
+from db_extender import feminine_noun_forms_and_convert
+from fnf import feminine_noun_forms
+from pipeline.correction.adj.change_adj_form import change_adj_form
+from pipeline.correction.noun.select_noun_form import select_noun_form
+from pipeline.correction.pron_art.select_pron_form import select_pron_art_form
+from pipeline.correction.verb.change_verb_form import change_verb_form
+from wordlib import follow_parent_dep, follow_child_dep, follow_child_dep_single_or_none
+from wordlib2 import find_verb, find_adj, find_art_and_pron
 
 TYPE_NOUN = "NOUN"
 TYPE_CONJ = "CONJ"

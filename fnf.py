@@ -1,8 +1,8 @@
 import json
 
-from pgender.utils.list import filter_none
-from pgender.utils.string import remove_prefix
-from pgender.wiktionary.api import find_by_title, find_by_any_form
+from utils.list import filter_none
+from utils.string import remove_prefix
+from wiktionary.api import find_by_title, find_by_any_form
 
 
 def has_male_noun_form(word):

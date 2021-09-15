@@ -1,8 +1,8 @@
 from loguru import logger
 from charsplit import Splitter
 
-from pgender.fnf import has_feminine_noun_form
-from pgender.wordlib import follow_parent_dep
+from fnf import has_feminine_noun_form
+from wordlib import follow_parent_dep
 
 
 def find_initial_words(doc):

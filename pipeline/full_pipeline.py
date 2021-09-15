@@ -1,10 +1,10 @@
 import loguru
 
-from pgender._spacy import spacify_with_coref
-from pgender.fiw import find_initial_words
-from pgender.ntbg import needs_to_be_gendered
-from pgender.pipeline.correction.correction import generate_possible_corrections
-from pgender.pipeline.correction.correction_pron import generate_possible_corrections_for_pron
+from _spacy import spacify_with_coref
+from fiw import find_initial_words
+from ntbg import needs_to_be_gendered
+from pipeline.correction.correction import generate_possible_corrections
+from pipeline.correction.correction_pron import generate_possible_corrections_for_pron
 
 
 def full_pipeline(text):

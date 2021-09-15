@@ -3,9 +3,9 @@ import sys
 from conllu import parse_incr
 from loguru import logger
 
-from pgender._spacy import spacify, spacify_with_coref
-from pgender.fiw import find_initial_words
-from pgender.ntbg import needs_to_be_gendered
+from _spacy import spacify, spacify_with_coref
+from fiw import find_initial_words
+from ntbg import needs_to_be_gendered
 
 logger.remove()
 logger.add(sys.stderr, level="INFO")

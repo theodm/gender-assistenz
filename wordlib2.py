@@ -1,4 +1,4 @@
-from pgender.wordlib import follow_child_dep, follow_parent_dep, follow_child_dep_single_or_none
+from wordlib import follow_child_dep, follow_parent_dep, follow_child_dep_single_or_none
 
 
 #

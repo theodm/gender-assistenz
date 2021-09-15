@@ -3,7 +3,7 @@ import re
 import dataset
 from lxml import etree as ET
 
-from pgender.utils.regex import regex_first_or_none, regex_nth_or_none
+from utils.regex import regex_first_or_none, regex_nth_or_none
 
 db = dataset.connect('sqlite:///words.db')
 

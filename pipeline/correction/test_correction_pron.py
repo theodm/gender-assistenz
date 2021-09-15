@@ -1,5 +1,5 @@
-from pgender._spacy import spacify_with_coref
-from pgender.pipeline.correction.correction_pron import generate_possible_corrections_for_pron
+from _spacy import spacify_with_coref
+from pipeline.correction.correction_pron import generate_possible_corrections_for_pron
 
 
 def test_singular_pron():

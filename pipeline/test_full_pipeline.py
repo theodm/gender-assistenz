@@ -1,4 +1,4 @@
-from pgender.pipeline.full_pipeline import full_pipeline
+from pipeline.full_pipeline import full_pipeline
 #
 # def test_full_pipeline_2():
 #     res =

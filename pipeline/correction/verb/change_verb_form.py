@@ -1,6 +1,6 @@
 import loguru
 
-from pgender.wiktionary.api import find_verb_by_title, find_verb_by_any_form
+from wiktionary.api import find_verb_by_title, find_verb_by_any_form
 
 
 def change_verb_form(word, target_number):

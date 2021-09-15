@@ -1,6 +1,6 @@
 from charsplit import Splitter
 
-from pgender.wiktionary.api import find_by_any_form, find_by_title
+from wiktionary.api import find_by_any_form, find_by_title
 
 splitter = Splitter()
 

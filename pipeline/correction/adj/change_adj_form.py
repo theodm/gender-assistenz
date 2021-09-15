@@ -3,9 +3,9 @@
 #
 # Findet anhand des Kontext des übergebenen Wortes heraus, ob das Adjektiv, stark dekliniert, schwach dekliniert oder gemischt dekliniert ist.
 #
-from pgender.pipeline.correction.special_word_forms import unbestimmte_artikel, bestimmte_artikel, starke_deklination, \
+from pipeline.correction.special_word_forms import unbestimmte_artikel, bestimmte_artikel, starke_deklination, \
     schwache_deklination, gemischte_deklination, special_word_form, demonstrativ_pronomen_derselb
-from pgender.wordlib import follow_parent_dep, follow_child_dep
+from wordlib import follow_parent_dep, follow_child_dep
 
 
 

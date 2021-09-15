@@ -1,4 +1,4 @@
-from pgender.pipeline.correction.special_word_forms import relativ_pronomen_derdiedas, relativ_pronomen_welche, \
+from pipeline.correction.special_word_forms import relativ_pronomen_derdiedas, relativ_pronomen_welche, \
     special_word_form, demonstrativ_pronomen_dies, demonstrativ_pronomen_jen, \
     indefinit_pronomen_jed, unbestimmte_artikel, bestimmte_artikel, \
     personal_pronomen_dritte_person, demonstrativ_pronomen_derdiedas, \
@@ -12,7 +12,7 @@ from pgender.pipeline.correction.special_word_forms import relativ_pronomen_derd
     possesiv_pronomen_er_es_attributierend, posssesiv_pronomen_sie_attributierend, \
     posssesiv_pronomen_wir_attributierend, posssesiv_pronomen_ihr_attributierend, \
     posssesiv_pronomen_sie_plural_attributierend, frage_pronomen_welche
-from pgender.wordlib2 import attributierende_pronomen_und_artikel
+from wordlib2 import attributierende_pronomen_und_artikel
 
 
 def select_pron_art_form(pron, target_gender, target_number):

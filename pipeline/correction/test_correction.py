@@ -1,5 +1,5 @@
-from pgender._spacy import spacify_with_coref
-from pgender.pipeline.correction.correction import generate_possible_corrections_plural, \
+from _spacy import spacify_with_coref
+from pipeline.correction.correction import generate_possible_corrections_plural, \
     generate_possible_corrections_singular
 
 

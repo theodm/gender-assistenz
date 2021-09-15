@@ -1,4 +1,4 @@
-from pgender._spacy import spacify_with_coref
+from _spacy import spacify_with_coref
 
 
 def test_spacify_with_coref():

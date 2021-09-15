@@ -1,5 +1,5 @@
-from pgender._spacy import spacify
-from pgender.fiw import find_initial_words
+from _spacy import spacify
+from fiw import find_initial_words
 
 def test_nomen():
     doc = spacify("Bundeswirtschaftsminister Werner Müller freut sich über solche Aussichten.")

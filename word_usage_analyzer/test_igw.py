@@ -1,4 +1,4 @@
-from pgender.word_usage_analyzer.igw import is_gendered_word, gendered_form_to_feminine_form
+from word_usage_analyzer.igw import is_gendered_word, gendered_form_to_feminine_form
 
 
 def test_forms():

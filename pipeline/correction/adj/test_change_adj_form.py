@@ -1,5 +1,5 @@
-from pgender._spacy import spacify
-from pgender.pipeline.correction.adj.change_adj_form import get_declination, change_adj_form
+from _spacy import spacify
+from pipeline.correction.adj.change_adj_form import get_declination, change_adj_form
 
 
 def test_get_declination_Kein_Singular():

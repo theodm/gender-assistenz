@@ -1,5 +1,5 @@
-from pgender._spacy import spacify_with_coref
-from pgender.ntbg import needs_to_be_gendered, RELATIVE_CLAUSE, APPOSITION, KOPULA_SENTENCE, GENITIVE_ATTRIBUTE, \
+from _spacy import spacify_with_coref
+from ntbg import needs_to_be_gendered, RELATIVE_CLAUSE, APPOSITION, KOPULA_SENTENCE, GENITIVE_ATTRIBUTE, \
     EIGENNAME_GEFUNDEN, NOUN_KERNEL_NAME_FOUND, COREF_CHAIN, NO_FEMININE_FORM, BOTH_FORMS, \
     _is_feminine_noun_form_of_extended
 import spacy

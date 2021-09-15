@@ -1,9 +1,9 @@
 import loguru
 
-from pgender.pipeline.correction.correction import preserve_case, TYPE_DET, TYPE_NOUN, TYPE_VERB
-from pgender.pipeline.correction.pron_art.select_pron_form import select_pron_art_form
-from pgender.pipeline.correction.verb.change_verb_form import change_verb_form
-from pgender.wordlib2 import find_art_and_pron, find_verb
+from pipeline.correction.correction import preserve_case, TYPE_DET, TYPE_NOUN, TYPE_VERB
+from pipeline.correction.pron_art.select_pron_form import select_pron_art_form
+from pipeline.correction.verb.change_verb_form import change_verb_form
+from wordlib2 import find_art_and_pron, find_verb
 
 
 def transform_pron_base(

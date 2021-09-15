@@ -1,0 +1,13 @@
+# Voraussetzungen
+ - Python 3.9+ (https://www.python.org/)
+ - Poetry (https://python-poetry.org/)
+ - NodeJS (https://nodejs.org/en/)
+
+# Schritte zum Installieren & Starten
+
+Ausgehend von dem Projektverzeichnis als Working Directory
+
+- poetry
+- python -m spacy download de_dep_news_trf
+- python -m spacy download de_core_news_lg
+- python -m coreferee install de

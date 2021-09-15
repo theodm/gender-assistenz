@@ -5,8 +5,8 @@ import requests
 from lxml import etree as ET
 from bs4 import BeautifulSoup
 
-from pgender.utils.regex import regex_first_or_none, regex_nth_or_none, regex_m_first_or_none
-from pgender.wiktionary.api import find_verb_by_title, find_verb_by_any_form
+from utils.regex import regex_first_or_none, regex_nth_or_none, regex_m_first_or_none
+from wiktionary.api import find_verb_by_title, find_verb_by_any_form
 
 db = dataset.connect('sqlite:///words.db')
 

@@ -4,7 +4,7 @@ from sklearn.calibration import CalibratedClassifierCV
 from sklearn.svm import LinearSVC
 from spacy import displacy
 
-from pgender._spacy import spacify
+from _spacy import spacify
 
 example_text = """
 In den letzten Jahren entstand der florierende Handel, an dem sich sogar asiatische Restaurants beteiligen, die hier an Sommerwochenenden informelle Außenstellen betreiben. 

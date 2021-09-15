@@ -1,8 +1,8 @@
 import pytest
 import spacy
 
-from pgender._spacy import spacify
-from pgender.wordlib2 import find_adj, find_verb, find_art_and_pron
+from _spacy import spacify
+from wordlib2 import find_adj, find_verb, find_art_and_pron
 
 
 def test_find_det_simple():

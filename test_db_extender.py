@@ -1,6 +1,6 @@
 import json
 
-from pgender.db_extender import find_in_db_and_convert
+from db_extender import find_in_db_and_convert
 
 
 def test_einfaches_wort():

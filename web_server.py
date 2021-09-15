@@ -1,12 +1,13 @@
 import json
+import pathlib
 
 from bottle import route, run, request, template, post, get, static_file
 from spacy import displacy
 
-from pgender._spacy import spacify_with_coref
-from pgender.fiw import find_initial_words
-from pgender.ntbg import needs_to_be_gendered
-from pgender.pipeline.full_pipeline import full_pipeline
+from _spacy import spacify_with_coref
+from fiw import find_initial_words
+from ntbg import needs_to_be_gendered
+from pipeline.full_pipeline import full_pipeline
 
 
 @post('/analyze')
@@ -39,7 +40,7 @@ def _tagging():
 
 @route('/<filepath:path>')
 def server_static(filepath):
-    return static_file(filepath, root="C:\\Users\\Theo\\Desktop\\Projekte\\ggender\\pgender\\client\\build")
+    return static_file(filepath, root=pathlib.Path(__file__).parent.joinpath("client").joinpath("build").resolve())
 
 
 run(host='localhost', port=8080)

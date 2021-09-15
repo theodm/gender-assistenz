@@ -4,7 +4,7 @@ import traceback
 from conllu import parse_incr
 from loguru import logger
 
-from pgender.pipeline.full_pipeline import full_pipeline
+from pipeline.full_pipeline import full_pipeline
 
 logger.remove()
 logger.add(sys.stderr, level="INFO")

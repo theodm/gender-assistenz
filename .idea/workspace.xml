@@ -4,68 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39c38374-acb6-4a6d-8688-dc89c31c7de9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pgender/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ggender.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/other.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/analyze.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/analyze_server.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/postcss.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/snowpack.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.svelte.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/Tailwind.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/svelte.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/tailwind.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/types/static.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/corenlp/corenlp_down.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpus_analyze.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpus_tester/corpus_tester.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpus_tester/one_sentence_tester.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpus_tester/test.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grammar/adjective.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grammar/determiner.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grammar/noun.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grammar/shared.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nltk_downlaod.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spacytest/spacytest.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stanza_test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_stanza.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tiger/test.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tiger/tiger.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/regex.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiktionary/api.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiktionary/parser.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wiktionary/test.py" beforeDir="false" />
-    </list>
+    <list default="true" id="f1a392fc-1440-4f04-a505-4a76c45675ec" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jupyter Notebook" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="Git.Stage.Ui.Settings">
+    <option name="ignoredFilesShown" value="true" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -75,7 +43,7 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="ProjectId" id="1vlUY7MihKTVz30woUbhWpHxGAW" />
+  <component name="ProjectId" id="1vdctqcQzxpKoTvr6CirUTFSDJg" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -87,52 +55,201 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pgender" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JSON&#10;JavaScript&#10;XML&#10;TEXT" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pgender/corpus_test" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Theo\Desktop\Projekte\ggender\pgender" />
+      <recent name="C:\Users\Theo\Desktop\Projekte\ggender\pgender\pgender\corpus_test" />
+      <recent name="C:\Users\Theo\Desktop\Projekte\ggender\pgender\pgender\wiktionary" />
+      <recent name="C:\Users\Theo\Desktop\Projekte\ggender\pgender\pgender" />
+      <recent name="C:\Users\Theo\Desktop\Projekte\pgender\pgender" />
     </key>
+  </component>
+  <component name="RunManager" selected="Python tests.pytest for test__spacy.test_spacify_with_coref">
+    <configuration name="_conllu" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pgender" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pgender/word_usage_analyzer" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pgender/word_usage_analyzer/_conllu.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="template_magic" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pgender" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pgender/wiktionary" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pgender/wiktionary/template_magic.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="verb_parser" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pgender" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pgender/wiktionary" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pgender/wiktionary/verb_parser.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test__spacy.test_spacify_with_coref" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="pgender" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pgender" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test__spacy.test_spacify_with_coref&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_correction_pron.test_singular_pron" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="pgender" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pgender/pipeline/correction" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_correction_pron.test_singular_pron&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.web_server" />
+      <item itemvalue="Python._conllu" />
+      <item itemvalue="Python.template_magic" />
+      <item itemvalue="Python.verb_parser" />
+      <item itemvalue="Python tests.pytest for test_correction_pron.test_singular_pron" />
+      <item itemvalue="Python tests.pytest for test__spacy.test_spacify_with_coref" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.pytest for test__spacy.test_spacify_with_coref" />
+        <item itemvalue="Python tests.pytest for test_correction_pron.test_singular_pron" />
+        <item itemvalue="Python.verb_parser" />
+        <item itemvalue="Python.template_magic" />
+        <item itemvalue="Python._conllu" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="39c38374-acb6-4a6d-8688-dc89c31c7de9" name="Default Changelist" comment="" />
-      <created>1627136214377</created>
+      <changelist id="f1a392fc-1440-4f04-a505-4a76c45675ec" name="Default Changelist" comment="" />
+      <created>1626895623483</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1627136214377</updated>
-      <workItem from="1627136216137" duration="2037000" />
-      <workItem from="1627560998340" duration="5531000" />
-      <workItem from="1628264813475" duration="1343000" />
-      <workItem from="1628696497009" duration="594000" />
-      <workItem from="1628930870032" duration="3879000" />
-      <workItem from="1630508597925" duration="1190000" />
-      <workItem from="1630602532917" duration="595000" />
+      <updated>1626895623483</updated>
+      <workItem from="1626895624887" duration="61000" />
+      <workItem from="1626895791269" duration="56000" />
+      <workItem from="1626895870809" duration="23568000" />
+      <workItem from="1627129710990" duration="4170000" />
+      <workItem from="1627737537175" duration="19164000" />
+      <workItem from="1627838291949" duration="845000" />
+      <workItem from="1627839308520" duration="13511000" />
+      <workItem from="1628088014264" duration="16112000" />
+      <workItem from="1628190306724" duration="596000" />
+      <workItem from="1628262521157" duration="14808000" />
+      <workItem from="1628353487986" duration="4322000" />
+      <workItem from="1628626268986" duration="310000" />
+      <workItem from="1628696516600" duration="5075000" />
+      <workItem from="1628930909654" duration="85423000" />
+      <workItem from="1630508620518" duration="6249000" />
+      <workItem from="1630602553462" duration="34313000" />
+      <workItem from="1630953416215" duration="3032000" />
+      <workItem from="1631029587253" duration="76463000" />
+      <workItem from="1631726284336" duration="516000" />
     </task>
-    <task id="LOCAL-00001" summary="viel umgeräumt, da andere Version von Python erforderlich">
-      <created>1627136527547</created>
+    <task id="LOCAL-00001" summary="Weitere Arbeiten">
+      <created>1628951745572</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1627136527548</updated>
+      <updated>1628951745572</updated>
     </task>
-    <task id="LOCAL-00002" summary="Exposé">
-      <created>1627584547806</created>
+    <task id="LOCAL-00002" summary="Weitere Arbeiten">
+      <created>1630522513574</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1627584547806</updated>
+      <updated>1630522513574</updated>
     </task>
-    <task id="LOCAL-00003" summary="Exposé">
-      <created>1628264855495</created>
+    <task id="LOCAL-00003" summary="Weitere Arbeiten">
+      <created>1631387925386</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1628264855495</updated>
+      <updated>1631387925386</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Weitere Arbeiten">
+      <created>1631388151121</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1631388151121</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Weitere Arbeiten">
+      <created>1631726705112</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1631726705112</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,8 +268,159 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="viel umgeräumt, da andere Version von Python erforderlich" />
-    <MESSAGE value="Exposé" />
-    <option name="LAST_COMMIT_MESSAGE" value="Exposé" />
+    <MESSAGE value="Weitere Arbeiten" />
+    <option name="LAST_COMMIT_MESSAGE" value="Weitere Arbeiten" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pgender/word_usage_analyzer/learner.py</url>
+          <line>16</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pgender/pipeline/correction/adj/change_adj_form.py</url>
+          <line>37</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pgender/db_extender.py</url>
+          <line>54</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="tests">
+        <watch expression="word.morph.get(&quot;Number&quot;)" language="Python" />
+        <watch expression="f&quot;{map_tense[target_tense]}_akt_{map_mood[target_mood]}_{target_person}_{map_number[target_number]}&quot;" language="Python" />
+        <watch expression="parent.morph.get(&quot;Number&quot;)[0] == &quot;Plur&quot;" language="Python" />
+        <watch expression="det[0].text" language="Python" />
+      </configuration>
+      <configuration name="PythonConfigurationType">
+        <watch expression="doc2._.coref_chains" language="Python" />
+        <watch expression="praesens_1_sing.findNext('td').text" language="Python" />
+        <watch expression="praesens_table.findAll(text=re.compile(&quot;1. Person Singular&quot;), recursive=True)" language="Python" />
+        <watch expression="table_heading.findAll(text=&quot;1. Person Singular&quot;, recursive=True)" language="Python" />
+        <watch expression="soup.find(text=&quot;1\. Person Singular&quot;, recursive=True)" language="Python" />
+        <watch expression="praesens_1_sing.findNext('td').text" language="Python" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_fiw_test_nomen_not_genderable.coverage" NAME="pytest for test_fiw.test_nomen_not_genderable Coverage Results" MODIFIED="1627830518149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_full_pipeline_test_full_pipeline_ex1.coverage" NAME="pytest for test_full_pipeline.test_full_pipeline_ex1 Coverage Results" MODIFIED="1630950629072" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_change_verb_form_test_change_verb_form.coverage" NAME="pytest for test_change_verb_form.test_change_verb_form Coverage Results" MODIFIED="1630173824698" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline/correction/verb" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_change_adj_form_test_get_declination_Unbestimmter_Artikel.coverage" NAME="pytest for test_change_adj_form.test_get_declination_Unbestimmter_Artikel Coverage Results" MODIFIED="1631132216303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline/correction/adj" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_fiw_test_nomen.coverage" NAME="pytest for test_fiw.test_nomen Coverage Results" MODIFIED="1628936834003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_wordlib2_test_find_pron3.coverage" NAME="pytest for test_wordlib2.test_find_pron3 Coverage Results" MODIFIED="1631031931536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_ntbg_test_app_pron_rec.coverage" NAME="pytest for test_ntbg.test_app_pron_rec Coverage Results" MODIFIED="1628938073854" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_full_pipeline_test_full_pipeline_ex10.coverage" NAME="pytest for test_full_pipeline.test_full_pipeline_ex10 Coverage Results" MODIFIED="1631037256999" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_ntbg_test_both_forms_5.coverage" NAME="pytest for test_ntbg.test_both_forms_5 Coverage Results" MODIFIED="1628947992826" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_correction_test_singular_aux.coverage" NAME="pytest for test_correction.test_singular_aux Coverage Results" MODIFIED="1630837006890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline/correction" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_in_test_ntbg_py.coverage" NAME="pytest in test_ntbg.py Coverage Results" MODIFIED="1630947910435" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_ntbg_test_x123.coverage" NAME="pytest for test_ntbg.test_x123 Coverage Results" MODIFIED="1628105154530" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_fiw_test_jeder2.coverage" NAME="pytest for test_fiw.test_jeder2 Coverage Results" MODIFIED="1627830478374" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_correction_test_singular_to_plural_with_adj_positiv.coverage" NAME="pytest for test_correction.test_singular_to_plural_with_adj_positiv Coverage Results" MODIFIED="1630753135786" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline/correction" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_change_adj_form_test_change_adj.coverage" NAME="pytest for test_change_adj_form.test_change_adj Coverage Results" MODIFIED="1631036470473" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline/correction/adj" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_db_extender_test_feminines_unbekanntes_zusammengesetztes_wort.coverage" NAME="pytest for test_db_extender.test_feminines_unbekanntes_zusammengesetztes_wort Coverage Results" MODIFIED="1629139488954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$igw.coverage" NAME="igw Coverage Results" MODIFIED="1627049190929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/word_usage_analyzer" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_ntbg_test_coref_single_sentence.coverage" NAME="pytest for test_ntbg.test_coref_single_sentence Coverage Results" MODIFIED="1628938751326" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_correction_test_zusammengesetztes_unbekanntes_plural.coverage" NAME="pytest for test_correction.test_zusammengesetztes_unbekanntes_plural Coverage Results" MODIFIED="1630335810721" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline/correction" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_correction_test_simple_plural.coverage" NAME="pytest for test_correction.test_simple_plural Coverage Results" MODIFIED="1629142646935" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline/correction" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_correction_test_und_form_nach_dem_und_plural.coverage" NAME="pytest for test_correction.test_und_form_nach_dem_und_plural Coverage Results" MODIFIED="1629227863615" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline/correction" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_db_extender_test_unbekanntes_zusammengesetztes_wort.coverage" NAME="pytest for test_db_extender.test_unbekanntes_zusammengesetztes_wort Coverage Results" MODIFIED="1629139362415" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_fiw_test_spezialfall.coverage" NAME="pytest for test_fiw.test_spezialfall Coverage Results" MODIFIED="1628094413712" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_full_pipeline_test_full_pipeline_ex2.coverage" NAME="pytest for test_full_pipeline.test_full_pipeline_ex2 Coverage Results" MODIFIED="1630951107609" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_fiw_test_nomen_with_dash.coverage" NAME="pytest for test_fiw.test_nomen_with_dash Coverage Results" MODIFIED="1627832380814" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_ntbg_test_eigenname_1.coverage" NAME="pytest for test_ntbg.test_eigenname_1 Coverage Results" MODIFIED="1628097913071" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_in_test_fiw_py.coverage" NAME="pytest in test_fiw.py Coverage Results" MODIFIED="1628937015952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_ntbg_test_temp.coverage" NAME="pytest for test_ntbg.test_temp Coverage Results" MODIFIED="1628336894329" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_full_pipeline_test_full_pipeline.coverage" NAME="pytest for test_full_pipeline.test_full_pipeline Coverage Results" MODIFIED="1630234690364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_change_adj_form_test_get_declination_Kein_Singular.coverage" NAME="pytest for test_change_adj_form.test_get_declination_Kein_Singular Coverage Results" MODIFIED="1630748627146" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline/correction/adj" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_ntbg_test_both_forms_7.coverage" NAME="pytest for test_ntbg.test_both_forms_7 Coverage Results" MODIFIED="1630947891176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_correction_test_pron_dies.coverage" NAME="pytest for test_correction.test_pron_dies Coverage Results" MODIFIED="1631033207177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline/correction" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_ntbg_test__is_feminine_noun_form_of_extended_2.coverage" NAME="pytest for test_ntbg.test__is_feminine_noun_form_of_extended_2 Coverage Results" MODIFIED="1630947108234" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_correction_test_pron_er.coverage" NAME="pytest for test_correction.test_pron_er Coverage Results" MODIFIED="1631122387212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline/correction" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_fiw_test_derjenige2.coverage" NAME="pytest for test_fiw.test_derjenige2 Coverage Results" MODIFIED="1627830020830" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_ntbg.coverage" NAME="pytest for test_ntbg Coverage Results" MODIFIED="1628938877197" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_full_pipeline_test_full_pipeline_ex3.coverage" NAME="pytest for test_full_pipeline.test_full_pipeline_ex3 Coverage Results" MODIFIED="1630952470026" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_correction_test_simple_singular_with_case_preserve.coverage" NAME="pytest for test_correction.test_simple_singular_with_case_preserve Coverage Results" MODIFIED="1630174824999" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline/correction" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_correction_pron_test_singular_pron.coverage" NAME="pytest for test_correction_pron.test_singular_pron Coverage Results" MODIFIED="1631555642212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline/correction" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_full_pipeline_test_full_pipeline_ex5.coverage" NAME="pytest for test_full_pipeline.test_full_pipeline_ex5 Coverage Results" MODIFIED="1630957239610" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_pgender_test_version.coverage" NAME="pytest for test_pgender.test_version Coverage Results" MODIFIED="1626895642057" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_igw_test_forms.coverage" NAME="pytest for test_igw.test_forms Coverage Results" MODIFIED="1627049377075" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/word_usage_analyzer" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_in_test_wordlib2_py.coverage" NAME="pytest in test_wordlib2.py Coverage Results" MODIFIED="1631124391703" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test__spacy_test_spacify_with_coref.coverage" NAME="pytest for test__spacy.test_spacify_with_coref Coverage Results" MODIFIED="1631555922218" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_in_test_full_pipeline_py.coverage" NAME="pytest in test_full_pipeline.py Coverage Results" MODIFIED="1631373793742" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_ntbg_test_coref_multiple_sentence.coverage" NAME="pytest for test_ntbg.test_coref_multiple_sentence Coverage Results" MODIFIED="1628102661850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_fiw_test_derjenige.coverage" NAME="pytest for test_fiw.test_derjenige Coverage Results" MODIFIED="1627830124217" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_full_pipeline_test_full_pipeline_ex11.coverage" NAME="pytest for test_full_pipeline.test_full_pipeline_ex11 Coverage Results" MODIFIED="1631389003585" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline" />
+    <SUITE FILE_PATH="coverage/pgender$learner.coverage" NAME="learner Coverage Results" MODIFIED="1627045251648" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/word_usage_analyzer" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_ntbg_test_both_forms.coverage" NAME="pytest for test_ntbg.test_both_forms Coverage Results" MODIFIED="1628946782480" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$parser.coverage" NAME="parser Coverage Results" MODIFIED="1631438600889" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/wiktionary" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_full_pipeline_test_full_pipeline_ex4.coverage" NAME="pytest for test_full_pipeline.test_full_pipeline_ex4 Coverage Results" MODIFIED="1630956558210" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_ntbg_test_gen_attribute_rec.coverage" NAME="pytest for test_ntbg.test_gen_attribute_rec Coverage Results" MODIFIED="1628938576112" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$_conllu.coverage" NAME="_conllu Coverage Results" MODIFIED="1631441413146" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/word_usage_analyzer" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_correction_test_singular_to_plural_with_adj_komparativ.coverage" NAME="pytest for test_correction.test_singular_to_plural_with_adj_komparativ Coverage Results" MODIFIED="1630753169485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline/correction" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_db_extender_test_andere_form.coverage" NAME="pytest for test_db_extender.test_andere_form Coverage Results" MODIFIED="1629137995666" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_ntbg_test_both_forms_2.coverage" NAME="pytest for test_ntbg.test_both_forms_2 Coverage Results" MODIFIED="1628946919754" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_ntbg_test__is_feminine_noun_form_of_extended_3.coverage" NAME="pytest for test_ntbg.test__is_feminine_noun_form_of_extended_3 Coverage Results" MODIFIED="1630947548207" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_correction_test_singular_to_plural_with_adj_superlativ.coverage" NAME="pytest for test_correction.test_singular_to_plural_with_adj_superlativ Coverage Results" MODIFIED="1630753084044" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline/correction" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_correction_test_singular_to_plural_with_adj_positiv_unbestimmt.coverage" NAME="pytest for test_correction.test_singular_to_plural_with_adj_positiv_unbestimmt Coverage Results" MODIFIED="1630786723483" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline/correction" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_change_adj_form_test_get_declination_test1.coverage" NAME="pytest for test_change_adj_form.test_get_declination_test1 Coverage Results" MODIFIED="1631035422013" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline/correction/adj" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_ntbg_test_gen_attribute_pos2.coverage" NAME="pytest for test_ntbg.test_gen_attribute_pos2 Coverage Results" MODIFIED="1628104946630" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_change_adj_form_test_get_declination_alle.coverage" NAME="pytest for test_change_adj_form.test_get_declination_alle Coverage Results" MODIFIED="1630749937657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline/correction/adj" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_wordlib2_test_find_pron_er.coverage" NAME="pytest for test_wordlib2.test_find_pron_er Coverage Results" MODIFIED="1631122906733" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$api.coverage" NAME="api Coverage Results" MODIFIED="1627111797134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/wiktionary" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_ntbg_test_both_forms_3.coverage" NAME="pytest for test_ntbg.test_both_forms_3 Coverage Results" MODIFIED="1628946934710" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_correction_test_pron.coverage" NAME="pytest for test_correction.test_pron Coverage Results" MODIFIED="1631126953055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline/correction" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_in_test_change_adj_form_py.coverage" NAME="pytest in test_change_adj_form.py Coverage Results" MODIFIED="1631132233049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline/correction/adj" />
+    <SUITE FILE_PATH="coverage/pgender$fiw.coverage" NAME="fiw Coverage Results" MODIFIED="1627821785019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_correction_test_adj_without_morph.coverage" NAME="pytest for test_correction.test_adj_without_morph Coverage Results" MODIFIED="1631389203936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline/correction" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_ntbg_test_both_forms_4.coverage" NAME="pytest for test_ntbg.test_both_forms_4 Coverage Results" MODIFIED="1628947938135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_correction_test_singular_to_plural_with_adj.coverage" NAME="pytest for test_correction.test_singular_to_plural_with_adj Coverage Results" MODIFIED="1630752598122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline/correction" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_full_pipeline_test_full_pipeline_ex12.coverage" NAME="pytest for test_full_pipeline.test_full_pipeline_ex12 Coverage Results" MODIFIED="1631440397926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_correction_test_pron_kein.coverage" NAME="pytest for test_correction.test_pron_kein Coverage Results" MODIFIED="1631032145096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline/correction" />
+    <SUITE FILE_PATH="coverage/pgender$template_magic.coverage" NAME="template_magic Coverage Results" MODIFIED="1631445067078" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/wiktionary" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_correction_test_und_form_vor_dem_und_plural.coverage" NAME="pytest for test_correction.test_und_form_vor_dem_und_plural Coverage Results" MODIFIED="1629228159055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline/correction" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_ntbg_test_both_forms_1.coverage" NAME="pytest for test_ntbg.test_both_forms_1 Coverage Results" MODIFIED="1628949634422" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_fiw_test_compound_noun.coverage" NAME="pytest for test_fiw.test_compound_noun Coverage Results" MODIFIED="1627928791615" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$select_verb_form.coverage" NAME="select_verb_form Coverage Results" MODIFIED="1630169962298" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline/correction/verb" />
+    <SUITE FILE_PATH="coverage/pgender$_spacy.coverage" NAME="_spacy Coverage Results" MODIFIED="1630850099620" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_fiw_test_jeder.coverage" NAME="pytest for test_fiw.test_jeder Coverage Results" MODIFIED="1627821795571" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_ntbg_test_nomen_with_dash.coverage" NAME="pytest for test_ntbg.test_nomen_with_dash Coverage Results" MODIFIED="1628937918556" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_fiw_test_nomen_not_pron.coverage" NAME="pytest for test_fiw.test_nomen_not_pron Coverage Results" MODIFIED="1627830422672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_correction_test_singular_to_plural_with_adj_positiv_unbestimmt_preserve_case.coverage" NAME="pytest for test_correction.test_singular_to_plural_with_adj_positiv_unbestimmt_preserve_case Coverage Results" MODIFIED="1630786810353" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline/correction" />
+    <SUITE FILE_PATH="coverage/pgender$web_server.coverage" NAME="web_server Coverage Results" MODIFIED="1631554809595" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_correction_test_pron_sein.coverage" NAME="pytest for test_correction.test_pron_sein Coverage Results" MODIFIED="1631040244278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline/correction" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_select_verb_form_test_select_verb_form.coverage" NAME="pytest for test_select_verb_form.test_select_verb_form Coverage Results" MODIFIED="1630172933831" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline/correction/verb" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_full_pipeline_test_full_pipeline_ex6.coverage" NAME="pytest for test_full_pipeline.test_full_pipeline_ex6 Coverage Results" MODIFIED="1630958347131" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline" />
+    <SUITE FILE_PATH="coverage/pgender$verb_parser.coverage" NAME="verb_parser Coverage Results" MODIFIED="1631554116560" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/wiktionary" />
+    <SUITE FILE_PATH="coverage/pgender$fiw_analyzer.coverage" NAME="fiw_analyzer Coverage Results" MODIFIED="1628105207154" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/word_usage_analyzer" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_in_test_correction_py.coverage" NAME="pytest in test_correction.py Coverage Results" MODIFIED="1631294976449" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline/correction" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_wordlib2_test_find_verb_oc.coverage" NAME="pytest for test_wordlib2.test_find_verb_oc Coverage Results" MODIFIED="1631123444676" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_ntbg_test_TODOOD.coverage" NAME="pytest for test_ntbg.test_TODOOD Coverage Results" MODIFIED="1628105040825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_igw_test_convert.coverage" NAME="pytest for test_igw.test_convert Coverage Results" MODIFIED="1627109365418" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/word_usage_analyzer" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_correction_test_simple_singular.coverage" NAME="pytest for test_correction.test_simple_singular Coverage Results" MODIFIED="1630075434602" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline/correction" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_full_pipeline_test_full_pipeline_ex9.coverage" NAME="pytest for test_full_pipeline.test_full_pipeline_ex9 Coverage Results" MODIFIED="1631036769368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_correction_test_pron_jen.coverage" NAME="pytest for test_correction.test_pron_jen Coverage Results" MODIFIED="1631033269736" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline/correction" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_ntbg_test_relative_clause_subject.coverage" NAME="pytest for test_ntbg.test_relative_clause_subject Coverage Results" MODIFIED="1628098394512" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_db_extender_test_einfaches_wort.coverage" NAME="pytest for test_db_extender.test_einfaches_wort Coverage Results" MODIFIED="1629137750170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_ntbg_test_gen_attribute_pos.coverage" NAME="pytest for test_ntbg.test_gen_attribute_pos Coverage Results" MODIFIED="1628104890117" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_correction_test_singular_unbestimmter_artikel.coverage" NAME="pytest for test_correction.test_singular_unbestimmter_artikel Coverage Results" MODIFIED="1630078930105" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline/correction" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_wordlib2_test_find_adj.coverage" NAME="pytest for test_wordlib2.test_find_adj Coverage Results" MODIFIED="1630746684319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_correction_test_pron_jed.coverage" NAME="pytest for test_correction.test_pron_jed Coverage Results" MODIFIED="1631127675454" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender/pipeline/correction" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_ntbg_test_both_forms_6.coverage" NAME="pytest for test_ntbg.test_both_forms_6 Coverage Results" MODIFIED="1628948316758" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_wordlib2_test_find_pron.coverage" NAME="pytest for test_wordlib2.test_find_pron Coverage Results" MODIFIED="1630850287517" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
+    <SUITE FILE_PATH="coverage/pgender$pytest_for_test_ntbg_test__is_feminine_noun_form_of_extended.coverage" NAME="pytest for test_ntbg.test__is_feminine_noun_form_of_extended Coverage Results" MODIFIED="1630947064380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pgender" />
   </component>
 </project>

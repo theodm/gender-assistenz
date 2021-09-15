@@ -7,7 +7,19 @@
 
 Ausgehend von dem Projektverzeichnis als Working Directory
 
-- poetry
+- poetry install
+- cd client
+- npm install
+- npm run build
+- cd ..
+- poetry shell
 - python -m spacy download de_dep_news_trf
 - python -m spacy download de_core_news_lg
 - python -m coreferee install de
+- python web_server.py
+
+# Neu starten
+- poetry shell
+- python web_server.py
+
+Aufruf über http://localhost:8080/index.html

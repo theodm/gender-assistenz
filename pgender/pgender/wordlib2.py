@@ -36,9 +36,6 @@ alle_pronomen_und_artikel = substituirende_pronomen + attributierende_pronomen_u
 # Es werden sowohl attributierende und substituirende Pronomen erfasst sowie Artikel.
 #
 def find_art_and_pron(word):
-    if word.pos_ != "NOUN":
-        raise Exception("Nur Nomen können Artikel besitzen.")
-
     result = []
 
     # Artikel und Pronomen, die vor dem Nomen stehen, werden hiermit erfasst.
@@ -104,9 +101,6 @@ def find_art_and_pron(word):
 #                    _____     ___
 #
 def find_verb(word):
-    if word.pos_ != "NOUN":
-        raise Exception("Nur zu Nomen kann das zugehörige Verb gefunden werden.")
-
     result = []
     #
     # Das Verb, zu dem das Nomen das Subjekt ist.

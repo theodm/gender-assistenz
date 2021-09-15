@@ -9,6 +9,17 @@ def find_verb_by_title(word):
 
     verbs_table = db['verbs']
 
+    result = verbs_table.find_one(title=word)
+
+    db.close()
+
+    return result
+
+def find_verb_by_any_form(word):
+    db = dataset.connect('sqlite:///' + os.path.dirname(os.path.realpath(__file__)) + '/words.db')
+
+    verbs_table = db['verbs']
+
     praes_akt_ind_1_sing = verbs_table.table.columns.praes_akt_ind_1_sing
     praes_akt_ind_2_sing = verbs_table.table.columns.praes_akt_ind_2_sing
     praes_akt_ind_3_sing = verbs_table.table.columns.praes_akt_ind_3_sing
@@ -74,17 +85,6 @@ def find_verb_by_title(word):
     )
 
     result = verbs_table.find_one(clause)
-
-    db.close()
-
-    return result
-
-def find_verb_by_any_form(title):
-    db = dataset.connect('sqlite:///' + os.path.dirname(os.path.realpath(__file__)) + '/words.db')
-
-    verbs_table = db['verbs']
-
-    result = verbs_table.find_one(title=title)
 
     db.close()
 

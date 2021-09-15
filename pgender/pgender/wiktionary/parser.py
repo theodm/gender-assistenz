@@ -81,6 +81,11 @@ for event, page_tag in ET.iterparse("dewiktionary-20210601-pages-articles.xml", 
             "Genitiv Plural 2",
             "Dativ Plural 2",
             "Akkusativ Plural 2",
+
+            "Nominativ Singular 1",
+            "Genitiv Singular 1",
+            "Dativ Singular 1",
+            "Akkusativ Singular 1"
         ]
 
         formen_result = []
@@ -114,14 +119,14 @@ for event, page_tag in ET.iterparse("dewiktionary-20210601-pages-articles.xml", 
                 title=title.text,
                 genus=genus,
 
-                nominativ_singular=formen_result[0],
-                nominativ_plural=formen_result[1],
-                genitiv_singular=formen_result[2],
-                genitiv_plural=formen_result[3],
-                dativ_singular=formen_result[4],
-                dativ_plural=formen_result[5],
-                akkusativ_singular=formen_result[6],
-                akkusativ_plural=formen_result[7],
+                nominativ_singular=formen_result[0] if formen_result[0] else formen_result[16],
+                nominativ_plural=formen_result[1] if formen_result[1] else formen_result[8],
+                genitiv_singular=formen_result[2] if formen_result[2] else formen_result[17],
+                genitiv_plural=formen_result[3] if formen_result[3] else formen_result[9],
+                dativ_singular=formen_result[4] if formen_result[4] else formen_result[18],
+                dativ_plural=formen_result[5] if formen_result[5] else formen_result[10],
+                akkusativ_singular=formen_result[6] if formen_result[6] else formen_result[19],
+                akkusativ_plural=formen_result[7] if formen_result[7] else formen_result[11],
 
                 nominativ_plural1=formen_result[8],
                 genitiv_plural1=formen_result[9],

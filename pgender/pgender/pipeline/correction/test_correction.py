@@ -372,3 +372,28 @@ def test_pron_sein():
     res = generate_possible_corrections_singular(doc[6])
 
     print(res)
+
+def test_adj_without_morph():
+    doc = spacify_with_coref("""Nach Angaben der Freiburger " Aktionärsgemeinschaft Metabox " soll ein Berliner Immobilienunternehmer Kopf der Investorengruppe sein .""")
+
+    res = generate_possible_corrections_singular(doc[11])
+
+    assert res == [
+        {
+            'type': '*',
+            'changes': [
+                {'from': 67, 'to': 70, 'type': 'DET', 'replace_with': 'ein?eine'},
+                {'from': 80, 'to': 101, 'type': 'NOUN', 'replace_with': 'Immobilienunternehmer?In'}
+            ]
+        },
+        {
+            'type': 'PLURAL_*',
+            'changes': [
+                {'from': 62, 'to': 66, 'type': 'VERB', 'replace_with': 'sollen'},
+                {'from': 67, 'to': 71, 'type': 'DET', 'replace_with': ''},
+                # ToDo: Das macht eigentlich keinen Sinn
+                {'from': 71, 'to': 79, 'type': 'ADJ', 'replace_with': 'Berline'},
+                {'from': 80, 'to': 101, 'type': 'NOUN', 'replace_with': 'Immobilienunternehmer?Innen'}
+            ]
+        }
+    ]

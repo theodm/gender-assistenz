@@ -132,8 +132,27 @@ def change_adj_form(adj, target_gender, target_number):
 
     text = adj.text
 
-    endung_bestehnd = get_endung_for_declination(adj, adj.morph.get("Case")[0], adj.morph.get("Gender")[0], adj.morph.get("Number")[0])
-    endung_neu = get_endung_for_declination(adj, adj.morph.get("Case")[0], target_gender, target_number)
+    #
+    # Workaround: Manche Adjektive erhalten keine morphologischen Informationen.
+    # Ist das der Fall versuchen wir hilfsweise, die morphologischen Informationen aus
+    # dem Nomen zu ziehen.
+    #
+    morph_case = adj.morph.get("Case")[0] if adj.morph.get("Case") else None
+    morph_gender = adj.morph.get("Gender")[0] if adj.morph.get("Gender") else None
+    morph_number = adj.morph.get("Number")[0] if adj.morph.get("Number") else None
+
+    if not morph_case or not morph_gender or not morph_number:
+        noun = follow_parent_dep(adj, "nk")
+
+        morph_case = noun.morph.get("Case")[0] if noun.morph.get("Case") else None
+        morph_gender = noun.morph.get("Gender")[0] if noun.morph.get("Gender") else None
+        morph_number = noun.morph.get("Number")[0] if noun.morph.get("Number") else None
+
+        if not morph_case or not morph_gender or not morph_number:
+            raise Exception(f"Für das Adjektiv {noun.text} können die morphologischen Informationen nicht ermittelt werden.")
+
+    endung_bestehnd = get_endung_for_declination(adj, morph_case, morph_gender, morph_number)
+    endung_neu = get_endung_for_declination(adj, morph_case, target_gender, target_number)
 
     def remove_suffix(str, suffix):
         if str.endswith(suffix):

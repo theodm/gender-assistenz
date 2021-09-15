@@ -1,5 +1,7 @@
 Der Benutzer redete mit seinem Computer.
 Sollte ein Dienstanbieter die Kanäle einzeln weitervermieten , sind damit nach den Vorstellungen der Telekom pro Kanal 160 Mark an Telekom-Vorleistungsgebühren fällig - , eine Summe , die weit über den von einigen Anbietern wie AOL geforderten Endkundentarifen von rund 50 Mark für eine Flatrate liegt .
+Der Messeführer geht sein Eis essen.
+
 
 2021-09-11 18:08:05.680 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:225 - Konnte Korrekturvorschlag '*' nicht erstellen: Zu dem Pronomen Wir mit dem Tag PPER wurde keine andere Form gefunden.
 2021-09-11 18:08:05.681 | INFO     | pgender.pipeline.correction.correction:generate_possible_corrections_singular:246 - Konnte Korrekturvorschlag 'PLURAL_*' nicht erstellen: Zu dem Pronomen Wir mit dem Tag PPER wurde keine andere Form gefunden.

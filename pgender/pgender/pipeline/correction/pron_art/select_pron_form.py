@@ -143,7 +143,10 @@ def select_pron_art_form(pron, target_gender, target_number):
     pronomen_lists = pronomen_map[pron.tag_]
 
     if not pronomen_lists:
-        raise Exception(f"Zu dem Pronomen {pron.text} mit dem Tag {pron.tag_} wurde keine Pronomen-Liste gefunden.")
+        # ToDo: Hier könnte man noch zwischen Fehlern (Es wurde nicht erkannt, wie das Pronomen umgewandelt werden muss.) und
+        # ToDo: dem Fall (Es ist keine Anpassung vorzunehmen.) unterschieden werden.
+        return None
+        #raise Exception(f"Zu dem Pronomen {pron.text} mit dem Tag {pron.tag_} wurde keine Pronomen-Liste gefunden.")
 
     # Kasus soll gleich bleiben
     target_case = pron.morph.get("Case")[0]
@@ -152,5 +155,8 @@ def select_pron_art_form(pron, target_gender, target_number):
         if lower_pron in pron_list:
             return special_word_form(pron_list, target_case, target_gender, target_number)
 
-    raise Exception(F"Zu dem Pronomen {pron.text} mit dem Tag {pron.tag_} wurde keine andere Form gefunden.")
+    # ToDo: Hier könnte man noch zwischen Fehlern (Es wurde nicht erkannt, wie das Pronomen umgewandelt werden muss.) und
+    # ToDo: dem Fall (Es ist keine Anpassung vorzunehmen.) unterschieden werden.
+    return None
+    # raise Exception(F"Zu dem Pronomen {pron.text} mit dem Tag {pron.tag_} wurde keine andere Form gefunden.")
 

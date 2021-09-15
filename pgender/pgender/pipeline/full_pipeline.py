@@ -1,7 +1,11 @@
+import loguru
+
 from pgender._spacy import spacify_with_coref
 from pgender.fiw import find_initial_words
 from pgender.ntbg import needs_to_be_gendered
 from pgender.pipeline.correction.correction import generate_possible_corrections
+from pgender.pipeline.correction.correction_pron import generate_possible_corrections_for_pron
+
 
 def full_pipeline(text):
     #
@@ -39,8 +43,16 @@ def full_pipeline(text):
             # 3. Schritt: Erstellung von Korrekturvorschlägen.
             #
             try:
-                possible_corrections, errors = generate_possible_corrections(word[0])
+                def _generate_possible_corrections(word):
+                    # ToDo in das Correction Package
+                    if word.pos_ == "NOUN":
+                        return generate_possible_corrections(word)
+
+                    return generate_possible_corrections_for_pron(word)
+
+                possible_corrections, errors = _generate_possible_corrections(word[0])
             except Exception as e:
+                loguru.logger.exception(e)
                 result.append({
                     "from": word[0].idx,
                     "to": word[0].idx + len(word[0].text),

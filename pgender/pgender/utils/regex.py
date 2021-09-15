@@ -1,6 +1,20 @@
 import re
 
 
+def regex_m_first_or_none(regex, text, m):
+    matches = re.findall(regex, text)
+
+    if not matches:
+        return None
+
+    matches = matches[m]
+
+    if type(matches) is not tuple:
+        return matches
+
+    return matches[0]
+
+
 def regex_nth_or_none(regex, text, n):
     matches = re.findall(regex, text)
 

@@ -49,5 +49,12 @@ def test_full_pipeline_ex10():
     # Soll einfach nur keine Exception werfen.
     full_pipeline("Nach seiner Aussage würde zwar sein Buchhalter daran glauben , aber nicht seine Kinder - und die wüssten viel mehr vom Internet als er .")
 
+def test_full_pipeline_ex11():
+    # Soll einfach nur keine Exception werfen.
+    full_pipeline("""Nach Angaben der Freiburger " Aktionärsgemeinschaft Metabox " soll ein Berliner Immobilienunternehmer Kopf der Investorengruppe sein .""")
+
+def test_full_pipeline_ex12():
+    # Soll einfach nur keine Exception werfen.
+    full_pipeline("""" Der Messeführer kann jedoch nicht nur über das Internet , sondern auch direkt vor Ort in den Handheld geladen werden " , sagte Oliver Leheis , Sprecher der Drupa Düsseldorf , zu c't .""")
 
 

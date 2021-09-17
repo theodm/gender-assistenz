@@ -13,13 +13,17 @@ Ausgehend von dem Projektverzeichnis als Working Directory
 - npm run build
 - cd ..
 - poetry shell
-- python -m spacy download de_dep_news_trf
-- python -m spacy download de_core_news_lg
-- python -m coreferee install de
-- python web_server.py
+- python3.9 -m spacy download de_dep_news_trf
+- python3.9 -m spacy download de_core_news_lg
+- python3.9 -m pip install coreferee
+- python3.9 -m coreferee install de
+- python3.9 -m pip install bottle
+- python3.9 -m pip install loguru
+- python3.9 -m pip install dataset
+- python3.9 web_server.py
 
 # Neu starten
 - poetry shell
 - python web_server.py
 
-Aufruf über http://localhost:8080/index.html
+Aufruf über http://localhost:8088/index.html

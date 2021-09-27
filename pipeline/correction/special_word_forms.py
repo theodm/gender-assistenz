@@ -914,7 +914,8 @@ indefinit_pronomen_jed = [
 ]
 
 #
-# Das Infinitpronomen jedermann wird nicht gegendert.
+# Das Infinitpronomen jedermann wird selbst nicht gegendert. Jedoch kann es, damit
+# ein Gendern möglich ist, in das Pronomen jed* umgewandelt werden.
 #
 
 

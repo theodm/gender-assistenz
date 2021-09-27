@@ -397,3 +397,63 @@ def test_adj_without_morph():
             ]
         }
     ]
+
+def test_adj_coref_1():
+    doc = spacify_with_coref("""Der Schüler geht sein Geld zählen.""")
+
+    res = generate_possible_corrections_singular(doc[1])
+
+    assert res == [
+        {
+            'type': '*',
+            'changes': [
+                {
+                    'from': 0,
+                    'to': 3,
+                    'type': 'DET',
+                    'replace_with': 'Der?Die'
+                },
+                {
+                    'from': 4,
+                    'to': 11,
+                    'type': 'NOUN',
+                    'replace_with': 'Schüler?In'
+                },
+                {
+                    'from': 17,
+                    'to': 21,
+                    'type': 'DET',
+                    'replace_with': 'sein?ihr'
+                }
+            ]
+        },
+        {
+            'type': 'PLURAL_*',
+            'changes': [
+                {
+                    'from': 0,
+                    'to': 3,
+                    'type':'DET',
+                    'replace_with': 'Die'
+                },
+                {
+                    'from': 4,
+                    'to': 11,
+                    'type': 'NOUN',
+                    'replace_with': 'Schüler?Innen'
+                },
+                {
+                    'from': 12,
+                    'to': 16,
+                    'type': 'VERB',
+                    'replace_with': 'gehen'
+                },
+                {
+                    'from': 17,
+                    'to': 21,
+                    'type': 'DET',
+                    'replace_with': 'ihr'
+                }
+            ]
+        }
+    ]

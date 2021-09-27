@@ -1,7 +1,7 @@
 from _spacy import spacify_with_coref
 from ntbg import needs_to_be_gendered, RELATIVE_CLAUSE, APPOSITION, KOPULA_SENTENCE, GENITIVE_ATTRIBUTE, \
     EIGENNAME_GEFUNDEN, NOUN_KERNEL_NAME_FOUND, COREF_CHAIN, NO_FEMININE_FORM, BOTH_FORMS, \
-    _is_feminine_noun_form_of_extended
+    _is_feminine_noun_form_of_extended, _is_feminine_pron_form
 import spacy
 
 
@@ -329,6 +329,48 @@ def test_both_forms_7():
     assert code[0][0] == BOTH_FORMS
 
 
+def test_both_forms_pron_1():
+    result = _spacy("Er und sie stehen vor seinem Haus")
+
+    ntbg, code = needs_to_be_gendered(result, result[0])
+
+    print(code)
+
+    assert not ntbg
+    assert code[0][0] == BOTH_FORMS
+
+def test_both_forms_pron_2():
+    result = _spacy("Sie und er stehen vor seinem Haus")
+
+    ntbg, code = needs_to_be_gendered(result, result[2])
+
+    print(code)
+
+    assert not ntbg
+    assert code[0][0] == BOTH_FORMS
+
+def test_both_forms_pron_3():
+    result = _spacy("Eine oder einer stehen vor deinem Haus.")
+
+    ntbg, code = needs_to_be_gendered(result, result[2])
+
+    print(code)
+
+    assert not ntbg
+    assert code[0][0] == BOTH_FORMS
+#
+# def test_subset_of_noun():
+#     result = _spacy("Fortschritt wird erreicht, wenn jeder volljährige Bürger, der eine Meinung hat, wählen geht.")
+#
+#     ntbg, code = needs_to_be_gendered(result, result[9])
+#
+#     print(code)
+#
+#     assert not ntbg
+#     assert code[0][0] == BOTH_FORMS
+
+
+
 def test__is_feminine_noun_form_of_extended():
     assert _is_feminine_noun_form_of_extended("Wissenschaftlerin", "Wissenschaftler")
 
@@ -337,4 +379,5 @@ def test__is_feminine_noun_form_of_extended_2():
 
 def test__is_feminine_noun_form_of_extended_3():
     assert _is_feminine_noun_form_of_extended("Raketenwissenschaftlerin", "-Wissenschaftler")
+
 

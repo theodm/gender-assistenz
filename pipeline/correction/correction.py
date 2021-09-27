@@ -4,6 +4,7 @@ from db_extender import feminine_noun_forms_and_convert
 from fnf import feminine_noun_forms
 from pipeline.correction.adj.change_adj_form import change_adj_form
 from pipeline.correction.noun.select_noun_form import select_noun_form
+from pipeline.correction.pposs.change_pposs_form import select_pposs_form
 from pipeline.correction.pron_art.select_pron_form import select_pron_art_form
 from pipeline.correction.verb.change_verb_form import change_verb_form
 from wordlib import follow_parent_dep, follow_child_dep, follow_child_dep_single_or_none
@@ -73,6 +74,44 @@ def transform_noun(
     # Artikel und Adjektive modifizieren.
     #
     if existing_number == "Sing":
+
+        for chain in word.doc._.coref_chains:
+            mention_indices = [x.root_index for x in chain]
+
+            if word.i in mention_indices:
+                for owi in mention_indices:
+                    # Das gleiche Wort ist für uns irrelevant.
+                    if owi == word.i:
+                        continue
+
+                    # Es intressieren uns nur Wörter, die im gleichen Satz stehen.
+                    if word.doc[owi].sent != word.sent:
+                        continue
+
+                    other_word = word.doc[owi]
+
+                    if other_word.pos_ in ["DET", "PRON"]:
+                        pron = other_word
+
+                        new_pron = select_pposs_form(pron, target_gender, target_number)
+
+                        if not new_pron:
+                            loguru.logger.debug(f"{pron.text} wurde nicht umgewandelt.")
+                            continue
+
+                        new_pron = preserve_case(new_pron, pron.text)
+                        new_pron = transform_pron(new_pron, pron.text)
+
+                        result.append({
+                            "text": pron.text,
+                            "from": pron.idx,
+                            "to": pron.idx + len(pron.text) + (1 if len(new_pron) == 0 else 0),
+                            "type": TYPE_DET,
+                            "replace_with": new_pron
+                        })
+
+
+
         #
         # Artikel und Pronomen modifizieren:
         # Der Schüler geht ein Eis essen. -> Die Schüler*in geht ein Eis essen.

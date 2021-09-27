@@ -14,10 +14,7 @@ from pipeline.correction.special_word_forms import relativ_pronomen_derdiedas, r
     posssesiv_pronomen_sie_plural_attributierend, frage_pronomen_welche
 from wordlib2 import attributierende_pronomen_und_artikel
 
-
-def select_pron_art_form(pron, target_gender, target_number):
-    lower_pron = pron.text.lower()
-
+def get_possible_pronomen_lists_for_tag(tag):
     pronomen_map = {
         # Artikel
         "ART": [
@@ -140,7 +137,20 @@ def select_pron_art_form(pron, target_gender, target_number):
 
     }
 
-    pronomen_lists = pronomen_map[pron.tag_]
+    return pronomen_map[tag]
+
+def select_pron_art_form(pron, target_gender, target_number):
+    lower_pron = pron.text.lower()
+
+    #
+    # Spezialfall: Jedermann ist selbst nicht genderbar, wir können aber statdessen das Pronomen jed* benutzen.
+    #
+    # ToDo: Sollte das wirklich so drinne bleiben? So sinnvoll erscheint der Vorschlag jedermann*jede nicht unbedingt?
+    #
+    if "jedermann" in lower_pron:
+        lower_pron = "jeder"
+
+    pronomen_lists = get_possible_pronomen_lists_for_tag(pron.tag_)
 
     if not pronomen_lists:
         # ToDo: Hier könnte man noch zwischen Fehlern (Es wurde nicht erkannt, wie das Pronomen umgewandelt werden muss.) und
@@ -153,6 +163,13 @@ def select_pron_art_form(pron, target_gender, target_number):
 
     for pron_list in pronomen_lists:
         if lower_pron in pron_list:
+            #
+            # Spezialfall: Es gibt keine Pluralform für "jed", stattdessen
+            # kann in diesem Fall jedoch "all" verwendet werden.
+            #
+            if pron_list == indefinit_pronomen_jed and target_number == "Plur":
+                pron_list = indefinit_pronomen_all
+
             return special_word_form(pron_list, target_case, target_gender, target_number)
 
     # ToDo: Hier könnte man noch zwischen Fehlern (Es wurde nicht erkannt, wie das Pronomen umgewandelt werden muss.) und

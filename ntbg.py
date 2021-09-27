@@ -5,6 +5,8 @@ from charsplit import splitter, Splitter
 
 from db_extender import find_in_db_and_convert
 from fnf import has_feminine_noun_form, feminine_noun_forms, find_in_db
+from pipeline.correction.pron_art.select_pron_form import get_possible_pronomen_lists_for_tag
+from pipeline.correction.special_word_forms import unbestimmte_artikel
 from utils.string import remove_prefix
 from wordlib import follow_child_dep, follow_parent_dep, follow_child_dep_single_or_none
 from loguru import logger
@@ -115,6 +117,17 @@ def _is_feminine_noun_form_of(feminine_form, of_word):
 
 # Ausgehend von einem initialen Wort überprüfen wir,
 # ob dieses Vorkomniss gegendert werden muss.
+def _is_feminine_pron_form(feminine_form, word):
+    possible_pronomen_lists = get_possible_pronomen_lists_for_tag(word.tag_)
+
+    for pron_list in possible_pronomen_lists:
+        if word.text.lower() in pron_list:
+            if feminine_form.text.lower() in [pron_list[8], pron_list[9], pron_list[10], pron_list[11]]:
+                return True
+
+    return False
+
+
 def needs_to_be_gendered(doc, word, check_coref=True):
     if word.pos_ == "PROPN":
         return False, [(EIGENNAME_GEFUNDEN, f"Eigenname gefunden: {word}")],
@@ -141,6 +154,11 @@ def needs_to_be_gendered(doc, word, check_coref=True):
             if conj.pos_ == "NOUN" and _is_feminine_noun_form_of(conj, word):
                 return False, [(BOTH_FORMS, "Beide Formen")]
 
+            # Auch bei Pronomen kann es vorkommen, dass beide Formen verwendet werden.
+            # Bsp.: Er und sie gehen ein Eis essen.
+            if conj.pos_ == "DET" or conj.pos_ == "PRON" and _is_feminine_pron_form(conj, word):
+                return False, [(BOTH_FORMS, "Beide Formen")]
+
             new_conjunctions.extend(follow_child_dep(conj, ["cd", "cj"]))
 
         conjunctions = new_conjunctions
@@ -160,7 +178,14 @@ def needs_to_be_gendered(doc, word, check_coref=True):
         if not conj:
             break
 
+        # Bei einem Nomen müssen wir überprüfen, ob die Nomen die feminine Form
+        # zu der maskulinen Form sind.
         if conj.pos_ == "NOUN" and _is_feminine_noun_form_of_extended(conj, word):
+            return False, [(BOTH_FORMS, "Beide Formen")]
+
+        # Auch bei Pronomen kann es vorkommen, dass beide Formen verwendet werden.
+        # Bsp.: Sie und er gehen ein Eis essen.
+        if conj.pos_ == "DET" or conj.pos_ == "PRON" and _is_feminine_pron_form(conj, word):
             return False, [(BOTH_FORMS, "Beide Formen")]
 
 
@@ -255,6 +280,8 @@ def needs_to_be_gendered(doc, word, check_coref=True):
 
             if not result[0]:
                 return False, [(RELATIVE_CLAUSE, f"Pronomen des Relativsatzes: {result} (für: {word})")] + result[1]
+
+
 
 
     if check_coref:

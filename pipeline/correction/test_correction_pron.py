@@ -25,3 +25,26 @@ def test_singular_pron():
                    {'text': 'geht', 'from': 31, 'to': 35, 'type': 'VERB', 'replace_with': 'gehen'}
                ]
            } in res[0]
+
+
+def test_jedermann():
+    doc = spacify_with_coref(
+        "Das Recht, zur Wahrung und Förderung der Arbeits- und Wirtschaftsbedingungen Vereinigungen zu bilden, ist für jedermann und für alle Berufe.")
+
+    res = generate_possible_corrections_for_pron(doc[17])
+
+    print(res)
+
+    assert {
+               'type': '*',
+               'changes': [
+                   {'text': 'jedermann', 'from': 110, 'to': 119, 'type': 'NOUN', 'replace_with': 'jedermann?jede'}
+               ]
+           } in res[0]
+
+    assert {
+               'type': 'PLURAL_*',
+               'changes': [
+                   {'text': 'jedermann', 'from': 110, 'to': 119, 'type': 'NOUN', 'replace_with': 'alle'}
+               ]
+           } in res[0]

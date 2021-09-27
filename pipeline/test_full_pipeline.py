@@ -57,4 +57,7 @@ def test_full_pipeline_ex12():
     # Soll einfach nur keine Exception werfen.
     full_pipeline("""" Der Messeführer kann jedoch nicht nur über das Internet , sondern auch direkt vor Ort in den Handheld geladen werden " , sagte Oliver Leheis , Sprecher der Drupa Düsseldorf , zu c't .""")
 
+def test_full_pipeline_step3b():
+    res = full_pipeline("""Fortschritt wird erreicht, wenn jeder volljährige Bürger, der eine Meinung hat, wählen geht.""")
 
+    print(res)

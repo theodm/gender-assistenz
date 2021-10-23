@@ -9,20 +9,19 @@ from pipeline.full_pipeline import full_pipeline
 logger.remove()
 logger.add(sys.stderr, level="INFO")
 
-data_file = open("corpora/de_hdt-ud-train.conllu", "r", encoding="utf-8")
+data_file = open("corpora/tiger_release_aug07.corrected.16012013.conll09", "r", encoding="utf-8")
+
+f = open("demofile2.txt", "a")
 
 i = 0
 for tokenlist in parse_incr(data_file):
     sentence = [x["form"] for x in tokenlist]
     sentence = " ".join(sentence)
 
-    res = full_pipeline(sentence)
+    sentence = sentence.replace(" ,", ",").replace(" ;", ";").replace(" .", ".").replace(" :", ":").replace(" ?", "?").repalce(" .", ".").replace(" !", "!")
 
-    for r in res:
-        if r["errors"]:
-            logger.info(f"{i}: {sentence}")
-            logger.info(r["errors"])
+    f.write(sentence)
 
-    i = i + 1
+
 
 

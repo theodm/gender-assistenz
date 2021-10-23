@@ -207,6 +207,9 @@ def needs_to_be_gendered(doc, word, check_coref=True):
     noun_kernel_modifiers = follow_child_dep(word, "nk")
 
     for nkm in noun_kernel_modifiers:
+        if nkm.pos_ != "PROPN":
+            continue
+
         result = needs_to_be_gendered(doc, nkm, check_coref)
 
         if not result[0]:

@@ -381,3 +381,12 @@ def test__is_feminine_noun_form_of_extended_3():
     assert _is_feminine_noun_form_of_extended("Raketenwissenschaftlerin", "-Wissenschaftler")
 
 
+
+def test_problem_1():
+    result = _spacy("Dass Perot ein Unternehmen erfolgreich leiten kann, davon sind selbst seine Kritiker ueberzeugt.")
+
+    ntbg, code = needs_to_be_gendered(result, result[12])
+
+    print(code)
+
+    assert ntbg

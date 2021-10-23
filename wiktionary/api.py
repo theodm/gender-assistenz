@@ -38,12 +38,6 @@ def find_verb_by_any_form(word):
     praet_akt_ind_1_plur = verbs_table.table.columns.praet_akt_ind_1_plur
     praet_akt_ind_2_plur = verbs_table.table.columns.praet_akt_ind_2_plur
     praet_akt_ind_3_plur = verbs_table.table.columns.praet_akt_ind_3_plur
-    praet_akt_konj1_1_sing = verbs_table.table.columns.praet_akt_konj1_1_sing
-    praet_akt_konj1_2_sing = verbs_table.table.columns.praet_akt_konj1_2_sing
-    praet_akt_konj1_3_sing = verbs_table.table.columns.praet_akt_konj1_3_sing
-    praet_akt_konj1_1_plur = verbs_table.table.columns.praet_akt_konj1_1_plur
-    praet_akt_konj1_2_plur = verbs_table.table.columns.praet_akt_konj1_2_plur
-    praet_akt_konj1_3_plur = verbs_table.table.columns.praet_akt_konj1_3_plur
     praet_akt_konj2_1_sing = verbs_table.table.columns.praet_akt_konj2_1_sing
     praet_akt_konj2_2_sing = verbs_table.table.columns.praet_akt_konj2_2_sing
     praet_akt_konj2_3_sing = verbs_table.table.columns.praet_akt_konj2_3_sing
@@ -70,12 +64,6 @@ def find_verb_by_any_form(word):
         praet_akt_ind_1_plur == word,
         praet_akt_ind_2_plur == word,
         praet_akt_ind_3_plur == word,
-        praet_akt_konj1_1_sing == word,
-        praet_akt_konj1_2_sing == word,
-        praet_akt_konj1_3_sing == word,
-        praet_akt_konj1_1_plur == word,
-        praet_akt_konj1_2_plur == word,
-        praet_akt_konj1_3_plur == word,
         praet_akt_konj2_1_sing == word,
         praet_akt_konj2_2_sing == word,
         praet_akt_konj2_3_sing == word,

@@ -67,21 +67,6 @@ def find_art_and_pron(word):
                 if ga.tag_ in alle_pronomen_und_artikel:
                     result.append(ga)
 
-    #
-    # Pronomen in Klausal-Sätzen.
-    #
-    # Bsp.: Der Benutzer sagte, er sei vorsichtig vorgegangen.
-    #
-    verb_of_sentence = follow_parent_dep(word, "sb")
-    if verb_of_sentence:
-        clausal_objects = follow_child_dep(verb_of_sentence, "oc")
-        for co in clausal_objects:
-            subjects = follow_child_dep(co, "sb")
-
-            for sj in subjects:
-                if sj.tag_ in alle_pronomen_und_artikel:
-                    result.append(sj)
-
     return result
 
 #
@@ -119,17 +104,6 @@ def find_verb(word):
             result.append(rc)
 
     #
-    # Das Verb in einem Klausal-Satz.
-    #
-    # Bsp.: Der Benutzer sagte, er sei vorsichtig vorgegangen.
-    verb_of_sentence = follow_parent_dep(word, "sb")
-    if verb_of_sentence:
-        clausal_objects = follow_child_dep(verb_of_sentence, "oc")
-        for co in clausal_objects:
-            # ToDo: co.morph.get("Number") erklären,
-            # Sonst gibt Ein fleißiger Rentner geht ein Eis essen. auch essen zurück.
-            if (co.pos_ == "VERB" or co.pos_ == "AUX") and co.morph.get("Number"):
-                result.append(co)
 
 
     return result

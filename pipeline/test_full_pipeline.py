@@ -1,3 +1,4 @@
+from _spacy import spacify
 from pipeline.full_pipeline import full_pipeline
 #
 # def test_full_pipeline_2():
@@ -61,3 +62,14 @@ def test_full_pipeline_step3b():
     res = full_pipeline("""Fortschritt wird erreicht, wenn jeder volljährige Bürger, der eine Meinung hat, wählen geht.""")
 
     print(res)
+
+def test_combination():
+    res = full_pipeline("Der Benutzer sagte, er sei vorsichtig vorgegangen.")
+
+    print(res)
+
+def test_combination_2():
+    res = full_pipeline("Der Benutzer sagte, er sei vorsichtig vorgegangen.")
+
+    print(res)
+

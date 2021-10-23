@@ -52,14 +52,6 @@ def test_find_verb_aux():
 
     assert verb == [doc[3]]
 
-def test_find_verb_oc():
-    doc = spacify("Der Benutzer sagte, er sei vorsichtig vorgegangen.")
-
-    pron = find_verb(doc[1])
-
-    assert pron == [doc[2], doc[5]]
-
-
 def test_find_prelat_art():
     doc = spacify("Der Benutzer, dessen Account gestohlen wurde, soll den PC neu starten.")
 
@@ -81,12 +73,6 @@ def test_find_art3():
 
     assert pron == [doc[8]]
 
-def test_find_pron_er():
-    doc = spacify("Der Benutzer sagte, er sei vorsichtig vorgegangen.")
-
-    pron = find_art_and_pron(doc[1])
-
-    assert pron == [doc[0], doc[4]]
 
 
 

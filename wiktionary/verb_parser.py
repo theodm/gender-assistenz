@@ -2,8 +2,8 @@ import json
 import re
 import dataset
 import requests
-from lxml import etree as ET
 from bs4 import BeautifulSoup
+from lxml import etree as ET
 
 from utils.regex import regex_first_or_none, regex_nth_or_none, regex_m_first_or_none
 from wiktionary.api import find_verb_by_title, find_verb_by_any_form
@@ -25,6 +25,7 @@ ns = "{http://www.mediawiki.org/xml/export-0.10/}"
 for event, page_tag in ET.iterparse("dewiktionary-20210601-pages-articles.xml", events=("end",), tag=f"{ns}page"):
     title = page_tag.find(f"{ns}title")
 
+
     revision_tag = page_tag.find(f"{ns}revision")
 
     # is None, statt not, da ein Tag bei lxml eine Liste ist und eine leere Liste als falsy ausgewertet wird.
@@ -43,60 +44,71 @@ for event, page_tag in ET.iterparse("dewiktionary-20210601-pages-articles.xml", 
     if not text:
         continue
 
-    verb_title = regex_first_or_none('== (.*) \(Konjugation\)', text)
+    if not "Deutsch" in text or not "Konjugation" in text:
+        continue
+
+    verb_title = regex_first_or_none('Flexion:\s*(.*)', title.text)
 
     if not verb_title:
         continue
 
-    verb_title = verb_title.replace("[", "").replace("]", "").replace(", untrennbar", "").replace("{{Anker|untrennbar}}", "").replace("{{Anker|trennbar}}", "").replace("{{Anker|sein}}", "")
-
-    if verb_title == "erpacken":
-        continue
-
-    template = regex_first_or_none('{{Deutsch Verb (.*)}}', text)
-
-    if not template:
-        continue
-
     #
-    # Hiermit wird ein Wiktionary-Template in ein internes Format,
-    # zur besseren Bearbeitung umgewandelt.
+    # verb_title = regex_first_or_none('== (.*) \(Konjugation\)', text)
     #
-    # Bsp.: {{Deutsch Verb unregelmäßig|1=|2=|3=|4=|5=|6=|7=|8=|9=|10=|Hilfsverb=|vp=|zp=|gerund=|Partizip+=|reflexiv=|zr=}}
-    #       {{Deutsch Verb unregelmäßig|1|2|3|4|5|6|7|8|9|10|Hilfsverb=|vp=|zp=|gerund=|Partizip+=|reflexiv=|zr=}}
+    # if not verb_title:
+    #     continue
     #
-    #       {{Deutsch Verb unregelmäßig|2=beiß|3=biss|4=biss|5=gebissen|7=-s|vp=ja|zp=ja|gerund=ja}}
+    # verb_title = verb_title.replace("[", "").replace("]", "").replace(", untrennbar", "").replace("{{Anker|untrennbar}}", "").replace("{{Anker|trennbar}}", "").replace("{{Anker|sein}}", "")
     #
-    def parse_wiki_template(template):
-        obj = {}
-
-        args = template.split("|")
-
-        obj["template_name"] = args[0]
-
-        for arg in args:
-            kv_pair = arg.split("=")
-
-            if len(kv_pair) > 1:
-                obj[kv_pair[0]] = kv_pair[1]
-
-        index_param_index = 1
-        for arg in args:
-            if "=" not in arg and arg != args[0]:
-                obj[f"{index_param_index}"] = arg
-                index_param_index = index_param_index + 1
-
-        return obj
-
-    template = parse_wiki_template(template)
+    # if verb_title == "erpacken":
+    #     continue
+    #
+    # template = regex_first_or_none('{{Deutsch Verb (.*)}}', text)
+    #
+    # if not template:
+    #     continue
+    #
+    # #
+    # # Hiermit wird ein Wiktionary-Template in ein internes Format,
+    # # zur besseren Bearbeitung umgewandelt.
+    # #
+    # # Bsp.: {{Deutsch Verb unregelmäßig|1=|2=|3=|4=|5=|6=|7=|8=|9=|10=|Hilfsverb=|vp=|zp=|gerund=|Partizip+=|reflexiv=|zr=}}
+    # #       {{Deutsch Verb unregelmäßig|1|2|3|4|5|6|7|8|9|10|Hilfsverb=|vp=|zp=|gerund=|Partizip+=|reflexiv=|zr=}}
+    # #
+    # #       {{Deutsch Verb unregelmäßig|2=beiß|3=biss|4=biss|5=gebissen|7=-s|vp=ja|zp=ja|gerund=ja}}
+    # #
+    # def parse_wiki_template(template):
+    #     obj = {}
+    #
+    #     args = template.split("|")
+    #
+    #     obj["template_name"] = args[0]
+    #
+    #     for arg in args:
+    #         kv_pair = arg.split("=")
+    #
+    #         if len(kv_pair) > 1:
+    #             obj[kv_pair[0]] = kv_pair[1]
+    #
+    #     index_param_index = 1
+    #     for arg in args:
+    #         if "=" not in arg and arg != args[0]:
+    #             obj[f"{index_param_index}"] = arg
+    #             index_param_index = index_param_index + 1
+    #
+    #     return obj
+    #
+    # template = parse_wiki_template(template)
+    #
+    # result = {}
+    #
+    # def t(x):
+    #     return template.get(x, "")
+    #
+    # def tn(x):
+    #     return template.get(x, None)
 
     result = {}
-    
-    def t(x):
-        return template.get(x, "")
-
-    def tn(x):
-        return template.get(x, None)
 
     result["title"] = verb_title
 
@@ -167,32 +179,32 @@ for event, page_tag in ET.iterparse("dewiktionary-20210601-pages-articles.xml", 
     praet_1_sing = parent_until_td(praet_table.findAll(text=re.compile("1. Person Singular"))[1])
 
     result["praet_akt_ind_1_sing"] = regex_first_or_none("ich ([a-zA-Zäöüß]+)", praet_1_sing.findNext('td').text)
-    result["praet_akt_konj1_1_sing"] = regex_first_or_none("ich ([a-zA-Zäöüß]+)", praet_1_sing.findNext('td').findNext('td').text)
+    result["praet_akt_konj2_1_sing"] = regex_first_or_none("ich ([a-zA-Zäöüß]+)", praet_1_sing.findNext('td').findNext('td').text)
 
     praet_2_sing = parent_until_td(praet_table.findAll(text=re.compile("2. Person Singular"))[1])
 
     result["praet_akt_ind_2_sing"] = regex_first_or_none("du ([a-zA-Zäöüß]+)", praet_2_sing.findNext('td').text)
-    result["praet_akt_konj1_2_sing"] = regex_first_or_none("du ([a-zA-Zäöüß]+)", praet_2_sing.findNext('td').findNext('td').text)
+    result["praet_akt_konj2_2_sing"] = regex_first_or_none("du ([a-zA-Zäöüß]+)", praet_2_sing.findNext('td').findNext('td').text)
 
     praet_3_sing = parent_until_td(praesens_table.findAll(text=re.compile("3. Person Singular"))[1])
 
     result["praet_akt_ind_3_sing"] = regex_first_or_none("er/sie/es ([a-zA-Zäöüß]+)", praet_3_sing.findNext('td').text)
-    result["praet_akt_konj1_3_sing"] = regex_first_or_none("er/sie/es ([a-zA-Zäöüß]+)", praet_3_sing.findNext('td').findNext('td').text)
+    result["praet_akt_konj2_3_sing"] = regex_first_or_none("er/sie/es ([a-zA-Zäöüß]+)", praet_3_sing.findNext('td').findNext('td').text)
 
     praet_1_plur = parent_until_td(praet_table.findAll(text=re.compile("1. Person Plural"))[1])
 
     result["praet_akt_ind_1_plur"] = regex_first_or_none("wir ([a-zA-Zäöüß]+)", praet_1_plur.findNext('td').text)
-    result["praet_akt_konj1_1_plur"] = regex_first_or_none("wir ([a-zA-Zäöüß]+)", praet_1_plur.findNext('td').findNext('td').text)
+    result["praet_akt_konj2_1_plur"] = regex_first_or_none("wir ([a-zA-Zäöüß]+)", praet_1_plur.findNext('td').findNext('td').text)
 
     praet_2_plur = parent_until_td(praesens_table.findAll(text=re.compile("2. Person Plural"))[1])
 
     result["praet_akt_ind_2_plur"] = regex_first_or_none("ihr ([a-zA-Zäöüß]+)", praet_2_plur.findNext('td').text)
-    result["praet_akt_konj1_2_plur"] = regex_first_or_none("ihr ([a-zA-Zäöüß]+)", praet_2_plur.findNext('td').findNext('td').text)
+    result["praet_akt_konj2_2_plur"] = regex_first_or_none("ihr ([a-zA-Zäöüß]+)", praet_2_plur.findNext('td').findNext('td').text)
 
     praet_3_plur = parent_until_td(praesens_table.findAll(text=re.compile("3. Person Plural"))[1])
 
     result["praet_akt_ind_3_plur"] = regex_first_or_none("sie ([a-zA-Zäöüß]+)", praet_3_plur.findNext('td').text)
-    result["praet_akt_konj1_3_plur"] = regex_first_or_none("sie ([a-zA-Zäöüß]+)", praet_3_plur.findNext('td').findNext('td').text)
+    result["praet_akt_konj2_3_plur"] = regex_first_or_none("sie ([a-zA-Zäöüß]+)", praet_3_plur.findNext('td').findNext('td').text)
 
     # if template['template_name'] == "regelmäßig":
     #     # https://de.wiktionary.org/wiki/Vorlage:Deutsch_Verb_regelm%C3%A4%C3%9Fig
@@ -282,7 +294,7 @@ for event, page_tag in ET.iterparse("dewiktionary-20210601-pages-articles.xml", 
     #     result["praet_akt_konj2_2_plur"] = f"{t('4')}et"
     #     result["praet_akt_konj2_3_plur"] = f"{t('4')}en"
 
-    print(verb_title + " args: " + template["template_name"] + " t: " + str(template) + " result: " + str(result))
+    # print(verb_title + " args: " + template["template_name"] + " t: " + str(template) + " result: " + str(result))
 
     verbs_table.insert(
         result

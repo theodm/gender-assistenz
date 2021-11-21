@@ -25,7 +25,7 @@ def preserve_case(new_str, old_str):
 
 def flatten(listOfLists):
     # ToDo: sorted gehört hier nicht hin
-    return sorted(list(chain.from_iterable(listOfLists)), key=lambda x: x["from"])
+    return sorted(list(chain.from_iterable([x for x in listOfLists if x is not None])), key=lambda x: x["from"])
 
 
 def transform_pron_base(
@@ -303,17 +303,17 @@ def generate_possible_corrections(coref_words):
     errors = []
     possible_corrections = []
 
-    for w in coref_words:
-        if not w.morph.get("Number"):
-            return [f"Für das Wort `{w.text}` konnten keine Korrekturen erstellt werden, da es die erforderliche morphologische Eigenschaft `Number` nicht enthält."]
+    # for w in coref_words:
+    #     if not w.morph.get("Number"):
+    #         return [], [f"Für das Wort `{w.text}` konnten keine Korrekturen erstellt werden, da es die erforderliche morphologische Eigenschaft `Number` nicht enthält."]
 
-    have_morph_number = all(w.morph.get("Number") and w.morph.get("Number")[0] for w in coref_words)
+    have_morph_number = any(w.morph.get("Number") and w.morph.get("Number")[0] for w in coref_words)
 
     if not have_morph_number:
-        return [f"Für die Wörter `{str([x.text for x in coref_words])}` konnten keine Korrekturen erstellt werden, da mindestens ein Wort die erforderliche morphologische Eigenschaft `Number` nicht enthält."]
+        return [], [f"Für die Wörter `{str([x.text for x in coref_words])}` konnten keine Korrekturen erstellt werden, da mindestens ein Wort die erforderliche morphologische Eigenschaft `Number` nicht enthält."]
 
-    are_plural = all(w.morph.get("Number")[0] == "Plur" for w in coref_words)
-    are_singular = all(w.morph.get("Number")[0] == "Sing" for w in coref_words)
+    are_plural = any(w.morph.get("Number") and w.morph.get("Number")[0] and w.morph.get("Number")[0] == "Plur" for w in coref_words)
+    are_singular = any(w.morph.get("Number") and w.morph.get("Number")[0] and w.morph.get("Number")[0] == "Sing" for w in coref_words)
 
     if are_plural:
         #

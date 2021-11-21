@@ -1,7 +1,8 @@
 from _spacy import spacify_with_coref
+from db_extender import feminine_noun_forms_and_convert
 from ntbg import needs_to_be_gendered, RELATIVE_CLAUSE, APPOSITION, KOPULA_SENTENCE, GENITIVE_ATTRIBUTE, \
     EIGENNAME_GEFUNDEN, NOUN_KERNEL_NAME_FOUND, COREF_CHAIN, NO_FEMININE_FORM, BOTH_FORMS, \
-    _is_feminine_noun_form_of_extended, _is_feminine_pron_form
+    _is_feminine_noun_form_of_extended, _is_feminine_pron_form, _feminine_noun_forms
 import spacy
 
 
@@ -339,6 +340,7 @@ def test_both_forms_pron_1():
     assert not ntbg
     assert code[0][0] == BOTH_FORMS
 
+
 def test_both_forms_pron_2():
     result = _spacy("Sie und er stehen vor seinem Haus")
 
@@ -349,6 +351,7 @@ def test_both_forms_pron_2():
     assert not ntbg
     assert code[0][0] == BOTH_FORMS
 
+
 def test_both_forms_pron_3():
     result = _spacy("Eine oder einer stehen vor deinem Haus.")
 
@@ -358,6 +361,22 @@ def test_both_forms_pron_3():
 
     assert not ntbg
     assert code[0][0] == BOTH_FORMS
+
+def test_xyz():
+    result = _spacy("Der Arbeitgeber muss auch die Schulungskurse bezahlen, mit denen der Fahrer wieder einen Punktebonus erwerben kann.")
+
+    ntbg, code = needs_to_be_gendered(result, result[11])
+
+    assert ntbg
+
+def test_xyz2():
+    result = _spacy("Der Arbeitgeber muss auch die Schulungskurse bezahlen, mit denen er wieder einen Punktebonus erwerben kann.")
+
+    ntbg, code = needs_to_be_gendered(result, result[11])
+
+    assert ntbg
+
+
 #
 # def test_subset_of_noun():
 #     result = _spacy("Fortschritt wird erreicht, wenn jeder volljährige Bürger, der eine Meinung hat, wählen geht.")
@@ -370,16 +389,16 @@ def test_both_forms_pron_3():
 #     assert code[0][0] == BOTH_FORMS
 
 
-
 def test__is_feminine_noun_form_of_extended():
     assert _is_feminine_noun_form_of_extended("Wissenschaftlerin", "Wissenschaftler")
+
 
 def test__is_feminine_noun_form_of_extended_2():
     assert _is_feminine_noun_form_of_extended("Raketenwissenschaftlerin", "Wissenschaftler")
 
+
 def test__is_feminine_noun_form_of_extended_3():
     assert _is_feminine_noun_form_of_extended("Raketenwissenschaftlerin", "-Wissenschaftler")
-
 
 
 def test_problem_1():
@@ -390,3 +409,71 @@ def test_problem_1():
     print(code)
 
     assert ntbg
+
+
+def test__feminine_noun_forms_Beamter():
+    # Problem: Beamte war ein adjektivisches Substantiv -> nun gefixt
+    result = _feminine_noun_forms(_spacy("LKA-Beamten")[0])
+
+    print(result)
+
+    assert result
+
+# ToDo:
+def test__feminine_noun_forms_Offizier():
+    # Problem: Offizierin nicht in Wiktionary (damals)
+    # auch: Reservist, Obrist, Boss, Volkswirt,
+    result = _feminine_noun_forms(_spacy("Nato-Offizier")[0])
+
+    assert result
+
+# ToDo:
+def test__feminine_noun_forms_Japaner():
+    # Problem: Word-Parser -> fixed
+    result = _feminine_noun_forms(_spacy("Japaner")[0])
+
+    assert result
+
+# ToDo:
+def test__feminine_noun_forms_General():
+    # Problem: Word-Parser
+    result = _feminine_noun_forms(_spacy("Generäle")[0])
+
+    assert result
+
+def test__feminine_noun_forms_Rebellen():
+    # Problem: Word-Parser -> nun gefixt
+    result = _feminine_noun_forms(_spacy("Rebellen")[0])
+
+    print(result)
+
+    assert result
+
+
+def test__feminine_noun_forms_HobbyKicker():
+    # Problem: Word-Parser -> nun gefixt
+    result = _feminine_noun_forms(_spacy("Hobby-Kicker")[0])
+
+    print(result)
+
+    assert result
+
+def test__feminine_noun_forms_Hochzeitsgaeste():
+    result = feminine_noun_forms_and_convert(_spacy("Hochzeitsgäste")[0])
+
+    print(result)
+
+    assert result
+
+def test__feminine_noun_forms_Rumaene():
+    # Problem: Word-Parser -> nun gefixt
+    result = _feminine_noun_forms(_spacy("Rumänen")[0])
+
+    assert result
+
+def test__feminine_noun_forms_Ordnungshueter():
+    result = feminine_noun_forms_and_convert(_spacy("Ordnungshüter")[0])
+
+    print(result)
+
+    assert result

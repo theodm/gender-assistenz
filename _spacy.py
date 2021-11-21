@@ -1,14 +1,19 @@
 import coreferee, spacy
 from spacy import displacy
+from joblib import Memory
+
+memory = Memory("cachedir")
 
 nlp = spacy.load("de_dep_news_trf")
 nlp2 = spacy.load("de_core_news_lg")
 nlp2.add_pipe('coreferee')
 
+@memory.cache
 def spacify(text):
     return nlp(text)
 
-
+#ToDo: Warum Cache?
+@memory.cache
 def spacify_with_coref(text):
     doc2 = nlp2(text)
     doc = nlp(text)
@@ -27,7 +32,7 @@ def displayc(text):
 # for word in doc:
 #     print(word.text + "," + word.tag_ + "," + word.pos_)
 #
-print(spacy.explain("ag"))
+#print(spacy.explain("ag"))
 #
 #
 #

@@ -505,3 +505,15 @@ def test_jedermann():
                    {'from': 110, 'to': 119, 'type': 'DET', 'replace_with': 'alle'}
                ]
            } in res
+
+
+def test_Kritiker():
+    doc = spacify_with_coref(
+        "Daß Perot ein Unternehmen erfolgreich leiten kann, davon sind selbst seine Kritiker überzeugt.")
+
+    res, e = generate_possible_corrections([doc[12]])
+
+    print(res)
+    print(e)
+
+

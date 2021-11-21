@@ -41,7 +41,7 @@ def find_in_db_and_convert(iword):
 
     last_part = splits[0][-1]
 
-    last_part_word = find_in_db(last_part, False)
+    last_part_word = find_in_db(last_part, True)
 
     if not last_part_word:
         return None

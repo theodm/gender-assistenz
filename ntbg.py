@@ -275,10 +275,17 @@ def needs_to_be_gendered(doc, word, check_coref=True):
     # Bsp.: Der Duden für Szenesprachen , der bereits seit dem Frühjahr im Handel ist , wird nun online fortgeschrieben .
     #           _____                     ___
     parent_of_subject = follow_parent_dep(word, "sb")
-    if parent_of_subject:
+    if parent_of_subject and word.pos_ == "PRON":
         parent_of_relative_clause = follow_parent_dep(parent_of_subject, "rc")
 
-        if parent_of_relative_clause:
+        #
+        # Nicht, wenn es einen Modifier gibt, dann kann die Satzstruktur wieder anders aussehen.
+        #
+        # Der Arbeitgeber muss auch die Schulungskurse bezahlen, mit denen er wieder einen Punktebonus erwerben kann.
+        #
+        has_modifier = follow_child_dep(parent_of_subject, "mo") is not None
+
+        if not has_modifier and parent_of_relative_clause:
             result = needs_to_be_gendered(doc, parent_of_relative_clause, check_coref)
 
             if not result[0]:

@@ -53,5 +53,7 @@ def get_coref_words_in_sentence(doc, word):
 
                 result.append(word.doc[owi])
 
+    if not result:
+        result = [word]
 
     return result

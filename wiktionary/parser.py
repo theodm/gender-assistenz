@@ -31,6 +31,9 @@ ns = "{http://www.mediawiki.org/xml/export-0.10/}"
 for event, page_tag in ET.iterparse("dewiktionary-20210601-pages-articles.xml", events=("end",), tag=f"{ns}page"):
     title = page_tag.find(f"{ns}title")
 
+    if title.text != "Kickerin":
+        continue
+
     revision_tag = page_tag.find(f"{ns}revision")
 
     # is None, statt not, da ein Tag bei lxml eine Liste ist und eine leere Liste als falsy ausgewertet wird.
@@ -46,11 +49,12 @@ for event, page_tag in ET.iterparse("dewiktionary-20210601-pages-articles.xml", 
 
     text = text_tag.text
 
-    if not text or "Deutsch Substantiv" not in text:
+    if not text or ("Deutsch Substantiv" not in text and "Substantiv|Deutsch" not in text):
         print_cnt(f"{title.text} ist kein Substantiv")
         continue
 
     multiple_meaning_texts = text.split("\n=== {{Wortart|Substantiv|Deutsch}}")[1:]
+
 
     for text in multiple_meaning_texts:
         if len(multiple_meaning_texts) > 2:
@@ -59,8 +63,10 @@ for event, page_tag in ET.iterparse("dewiktionary-20210601-pages-articles.xml", 
         # Genus auslesen
         genus = regex_first_or_none('\\|Genus=([a-z])', text)
         if not genus:
-            print_cnt(f"{title.text} enthält keine Genus-Informationen")
-            continue
+            genus = regex_first_or_none('\\|Genus 1=([a-z])', text)
+            if not genus:
+                print_cnt(f"{title.text} enthält keine Genus-Informationen")
+                continue
 
         formen = [
             "Nominativ Singular",
@@ -87,22 +93,59 @@ for event, page_tag in ET.iterparse("dewiktionary-20210601-pages-articles.xml", 
             "Dativ Singular 1",
             "Akkusativ Singular 1"
         ]
-
         formen_result = []
-        for form in formen:
-            form_result = regex_first_or_none(f"\\|{form}=(.*)\n", text)
 
-            formen_result.append(form_result.strip() if form_result is not None else None)
+        stamm = regex_first_or_none(f"\\|Stamm=(.*)\n", text)
+
+        if not "Deutsch adjektivisch" in text or not stamm:
+            for form in formen:
+                form_result = regex_first_or_none(f"\\|{form}=(.*)\n", text)
+
+                formen_result.append(form_result.strip() if form_result is not None else None)
+        else:
+            formen_result.append(stamm + "r")
+            formen_result.append(stamm + "")
+            formen_result.append(stamm + "n")
+            formen_result.append(stamm + "r")
+            formen_result.append(stamm + "m")
+            formen_result.append(stamm + "n")
+            formen_result.append(stamm + "n")
+            formen_result.append(stamm + "")
+
+            formen_result.append("")
+            formen_result.append("")
+            formen_result.append("")
+            formen_result.append("")
+
+            formen_result.append("")
+            formen_result.append("")
+            formen_result.append("")
+            formen_result.append("")
+
+            formen_result.append("")
+            formen_result.append("")
+            formen_result.append("")
+            formen_result.append("")
 
         #print(formen_result)
 
         # Bsp.: [[Portierfrau]], [[Portierin]], [[Portiersfrau]]
         weibliche_formen_raw = regex_nth_or_none("Weibliche Wortformen}}\\n:\\[(.*)?\\] (.*)", text, 1)
+        if not weibliche_formen_raw:
+            w = regex_nth_or_none("Weibliche Wortformen}}\\n:\\[\\[(.*)?\\]\\]", text, 0)
+            if w:
+                weibliche_formen_raw = "[[" + w + "]]"
+
         weibliche_formen_matches = None
         if weibliche_formen_raw:
             weibliche_formen_matches = re.findall("\\[\\[(.*)?\\]\\]", weibliche_formen_raw)
 
         maennliche_formen_raw = regex_nth_or_none("Männliche Wortformen}}\\n:\\[(.*)?\\] (.*)", text, 1)
+        if not maennliche_formen_raw:
+            m = regex_nth_or_none("Männliche Wortformen}}\\n:\\[\\[(.*)?\\]\\]", text, 0)
+            if m:
+                maennliche_formen_raw = "[[" + m + "]]"
+
         maennliche_formen_matches = None
         if maennliche_formen_raw:
             maennliche_formen_matches = re.findall("\\[\\[(.*)?\\]\\]", maennliche_formen_raw)

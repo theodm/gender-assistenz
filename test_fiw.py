@@ -72,3 +72,18 @@ def test_derjenige2():
     result = find_initial_words(doc)
 
     assert result == [(doc[0], 0), (doc[2], 2), (doc[10], 10)]
+
+
+def test_persPron1Person():
+    doc = spacify("Verschärft stellen sich die Probleme für Frauen dar, die oft freiwillig in Nachtschicht gehen, \"weil das familiär für mich ideal ist\".")
+
+    result = find_initial_words(doc)
+
+    assert result == []
+
+def test_persPron3():
+    doc = spacify("Er sollte sich überlegen ob das sinnvoll ist.")
+
+    result = find_initial_words(doc)
+
+    assert result == [(doc[0], 0)]

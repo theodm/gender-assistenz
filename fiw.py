@@ -11,13 +11,27 @@ def find_initial_words(doc):
     for word in doc:
         logger.debug(f"{word.text} : {word.pos_} : {word.tag_} : {word.morph} : {word.lemma_}")
 
+        # Problematisch man
+        # niemand, jemand, man, wer, was, selbst, selber, derlei, dergleichen, einander, beide
+        stop_words = ["niemand", "jemand", "man", "wer", "was", "selbst", "selber", "derlei", "dergleichen", "einander", "beide"]
+
+        is_stop_word = any([word.text.lower().startswith(x) for x in stop_words])
+
         if word.pos_ == "NOUN" and word.morph.get("Gender") and word.morph.get("Gender")[0] == "Masc":
             result.append((word, index))
+
+        # Wenn es eine Angabe zur Person gibt, dann ist nur die dritte Person relevant:
+        # Bspsw. bei Personalpronomen.
+        # Außerdem nur Singular-Pronomen relevant!
+        # Niemand wird nicht korrigiert!
 
         elif word.pos_ == "PRON" and \
                 word.morph.get("Gender") and \
                 word.morph.get("Gender")[0] == "Masc" \
-                and word.tag_ in ["PDS", "PIS", "PPER", "PPOSS", "PRELS", "PWS"]:
+                and word.tag_ in ["PDS", "PIS", "PPER", "PPOSS", "PRELS", "PWS"]\
+                and (not word.morph.get("Person") or not word.morph.get("Person")[0] or (word.morph.get("Person")[0] == "3"))\
+                and (not word.morph.get("Number") or not word.morph.get("Number")[0] or (word.morph.get("Number")[0] == "Sing"))\
+                and (not is_stop_word):
             result.append((word, index))
 
         index = index + 1

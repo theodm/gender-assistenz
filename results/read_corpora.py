@@ -8,17 +8,35 @@ from pipeline.full_pipeline import full_pipeline
 from joblib import Memory
 from loguru import logger
 
+#
+# In der Arbeit beschriebene Auswertung. List die Datei demofile3.txt; diese muss entsprechend
+# wie in der Datei tiger_extract.py beschrieben, aufgebaut und markiert sein. Entstehen tut die SQLite-Datenbank
+# results.db
+#
+# corrections.csv enthält eine manuelle Auswertung der Korrekturvorschläge. Um die Auswertungen durchführen zu können,
+# muss diese in die Datenbank manuell importiert werden. Dabei muss eine Tabelle "corrections" mit den Spalten uniq_id, result, desc
+# erstellt werden. Dann kann das SQL-Skript "auswertung.sql" ausgeführt werden.
+#
+
+
 logger.remove()
+#
+# Die Ergebnisse der Durchführung der Pipeline werden gecached. Hintergrund: Sie dauern lange und es gibt
+# ein Problem mit Spacy. Es führt zu Memory Leaks; das führte dazu, dass das Skript nie vollständig gelaufen ist.
+# Workaround ist nun, das Skript mehrmals zu starten. Alte Ergebnisse müssen wegen des Caching nicht neu berechnet werden und
+# ein Memory Leak kann nicht auftreten.
+#
 memory = Memory("cachedir", verbose=0)
 
+# Eingabedatei (siehe tiger_extract.py)
 f = open("demofile3.txt", "r", encoding="utf-8")
 
 count = 0
 
+# Ausgabedatei (siehe auswertung.sql)
 db = dataset.connect('sqlite:///results.db')
 
 marks_table = db['marks']
-
 
 @memory.cache
 def cached_full_pipeline(article):
@@ -26,6 +44,9 @@ def cached_full_pipeline(article):
 
 @memory.cache
 def parse_article(article):
+    #
+    # Parst einen Artikel im
+    #
     t = article
     ci = 0
     new_article = ""

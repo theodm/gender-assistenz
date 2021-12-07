@@ -1,4 +1,3 @@
-dewiktionary-20210601-pages-articles.xml
 tiger_release_aug07.corrected.16012013.xml
 tiger_release_aug07.corrected.16012013.conll09
 __pycache__
@@ -7,3 +6,6 @@ __pycache__
 /.idea
 .pytest_cache
 cachedir
+/wiktionary/dewiktionary-20210601-pages-articles.xml
+/results/results.db-shm
+/results/results.db-wal

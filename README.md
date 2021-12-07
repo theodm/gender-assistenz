@@ -27,3 +27,7 @@ Ausgehend von dem Projektverzeichnis als Working Directory
 - python web_server.py
 
 Aufruf über http://localhost:8088/index.html
+
+# Kurze Übersicht
+
+

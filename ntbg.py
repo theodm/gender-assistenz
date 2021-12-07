@@ -283,9 +283,10 @@ def needs_to_be_gendered(doc, word, check_coref=True):
         #
         # Der Arbeitgeber muss auch die Schulungskurse bezahlen, mit denen er wieder einen Punktebonus erwerben kann.
         #
-        has_modifier = follow_child_dep(parent_of_subject, "mo") is not None
+        # ToDo: Genauer einschränken
+        # has_modifier = follow_child_dep(parent_of_subject, "mo") is not None
 
-        if not has_modifier and parent_of_relative_clause:
+        if parent_of_relative_clause:
             result = needs_to_be_gendered(doc, parent_of_relative_clause, check_coref)
 
             if not result[0]:

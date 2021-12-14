@@ -1,9 +1,11 @@
-from _spacy import spacify_with_coref
-from db_extender import feminine_noun_forms_and_convert
+
 from ntbg import needs_to_be_gendered, RELATIVE_CLAUSE, APPOSITION, KOPULA_SENTENCE, GENITIVE_ATTRIBUTE, \
     EIGENNAME_GEFUNDEN, NOUN_KERNEL_NAME_FOUND, COREF_CHAIN, NO_FEMININE_FORM, BOTH_FORMS, \
     _is_feminine_noun_form_of_extended, _is_feminine_pron_form, _feminine_noun_forms
 import spacy
+
+from pipeline.spacy_shared._spacy import spacify_with_coref
+from wiktionary.db_extender import feminine_noun_forms_and_convert
 
 
 def _spacy(sentence):

@@ -4,10 +4,8 @@ import pathlib
 from bottle import route, run, request, template, post, get, static_file
 from spacy import displacy
 
-from _spacy import spacify_with_coref
-from fiw import find_initial_words
-from ntbg import needs_to_be_gendered
 from pipeline.full_pipeline import full_pipeline
+from pipeline.spacy_shared._spacy import spacify_with_coref
 
 
 @post('/analyze')

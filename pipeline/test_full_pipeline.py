@@ -1,4 +1,3 @@
-from _spacy import spacify
 from pipeline.full_pipeline import full_pipeline
 #
 # def test_full_pipeline_2():

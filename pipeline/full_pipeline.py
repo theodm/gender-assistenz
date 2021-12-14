@@ -1,10 +1,10 @@
 import loguru
 
-from _spacy import spacify_with_coref
-from fiw import find_initial_words
-from ntbg import needs_to_be_gendered
 from pipeline.correction.correction2 import generate_possible_corrections
-from wordlib import follow_parent_dep, get_coref_words_in_sentence
+from pipeline.initial_words.fiw import find_initial_words
+from pipeline.ntbg.ntbg import needs_to_be_gendered
+from pipeline.spacy_shared._spacy import spacify_with_coref
+from pipeline.spacy_shared.wordlib import get_coref_words_in_sentence
 
 
 def full_pipeline(text):

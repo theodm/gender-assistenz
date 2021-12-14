@@ -2,14 +2,14 @@ from itertools import chain
 
 import loguru
 
-from db_extender import feminine_noun_forms_and_convert
 from pipeline.correction.adj.change_adj_form import change_adj_form
 from pipeline.correction.noun.select_noun_form import select_noun_form
 from pipeline.correction.pposs.change_pposs_form import select_pposs_form
 from pipeline.correction.pron_art.select_pron_form import select_pron_art_form
 from pipeline.correction.verb.change_verb_form import change_verb_form
-from wordlib import follow_parent_dep, follow_child_dep_single_or_none
-from wordlib2 import find_art_and_pron, find_verb, find_adj
+from pipeline.spacy_shared.wordlib import follow_parent_dep, follow_child_dep_single_or_none
+from pipeline.spacy_shared.wordlib2 import find_art_and_pron, find_verb, find_adj
+from wiktionary.db_extender import feminine_noun_forms_and_convert
 
 TYPE_NOUN = "NOUN"
 TYPE_CONJ = "CONJ"

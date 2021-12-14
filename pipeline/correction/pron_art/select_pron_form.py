@@ -12,7 +12,6 @@ from pipeline.correction.special_word_forms import relativ_pronomen_derdiedas, r
     possesiv_pronomen_er_es_attributierend, posssesiv_pronomen_sie_attributierend, \
     posssesiv_pronomen_wir_attributierend, posssesiv_pronomen_ihr_attributierend, \
     posssesiv_pronomen_sie_plural_attributierend, frage_pronomen_welche
-from wordlib2 import attributierende_pronomen_und_artikel
 
 def get_possible_pronomen_lists_for_tag(tag):
     pronomen_map = {

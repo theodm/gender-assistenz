@@ -1,15 +1,11 @@
-
-# Gibt an, ob ein Nomen gegendert werden muss.
-import loguru
 from charsplit import splitter, Splitter
 
-from db_extender import find_in_db_and_convert
-from fnf import has_feminine_noun_form, feminine_noun_forms, find_in_db
 from pipeline.correction.pron_art.select_pron_form import get_possible_pronomen_lists_for_tag
-from pipeline.correction.special_word_forms import unbestimmte_artikel
-from utils.string import remove_prefix
-from wordlib import follow_child_dep, follow_parent_dep, follow_child_dep_single_or_none
 from loguru import logger
+
+from pipeline.spacy_shared.wordlib import follow_child_dep, follow_parent_dep, follow_child_dep_single_or_none
+from wiktionary.db_extender import find_in_db_and_convert
+from wiktionary.fnf import feminine_noun_forms, find_in_db
 
 EIGENNAME_GEFUNDEN = 1
 NO_FEMININE_FORM = 6

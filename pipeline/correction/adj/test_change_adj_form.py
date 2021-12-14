@@ -1,5 +1,6 @@
-from _spacy import spacify
+
 from pipeline.correction.adj.change_adj_form import get_declination, change_adj_form
+from pipeline.spacy_shared._spacy import spacify
 
 
 def test_get_declination_Kein_Singular():

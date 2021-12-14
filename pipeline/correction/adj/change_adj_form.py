@@ -5,8 +5,7 @@
 #
 from pipeline.correction.special_word_forms import unbestimmte_artikel, bestimmte_artikel, starke_deklination, \
     schwache_deklination, gemischte_deklination, special_word_form, demonstrativ_pronomen_derselb
-from wordlib import follow_parent_dep, follow_child_dep
-
+from pipeline.spacy_shared.wordlib import follow_parent_dep, follow_child_dep
 
 
 def get_declination(adj, target_number_is_plural = False):

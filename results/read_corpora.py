@@ -2,8 +2,6 @@ import gc
 
 import dataset
 
-from _spacy import spacify_with_coref
-from ntbg import NO_FEMININE_FORM
 from pipeline.full_pipeline import full_pipeline
 from joblib import Memory
 from loguru import logger
@@ -17,7 +15,8 @@ from loguru import logger
 # muss diese in die Datenbank manuell importiert werden. Dabei muss eine Tabelle "corrections" mit den Spalten uniq_id, result, desc
 # erstellt werden. Dann kann das SQL-Skript "auswertung.sql" ausgeführt werden.
 #
-
+from pipeline.ntbg.ntbg import NO_FEMININE_FORM
+from pipeline.spacy_shared._spacy import spacify_with_coref
 
 logger.remove()
 #

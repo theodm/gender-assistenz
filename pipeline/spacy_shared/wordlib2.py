@@ -1,9 +1,11 @@
-from wordlib import follow_child_dep, follow_parent_dep, follow_child_dep_single_or_none
 
 
 #
 # Gibt alle Adjektive für ein Nomen zurück.
 #
+from pipeline.spacy_shared.wordlib import follow_child_dep, follow_parent_dep, follow_child_dep_single_or_none
+
+
 def find_adj(word):
     if word.pos_ != "NOUN":
         raise Exception("Nur Nomen können Adjektive besitzen.")

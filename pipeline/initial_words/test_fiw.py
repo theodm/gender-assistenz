@@ -1,5 +1,6 @@
-from _spacy import spacify
 from fiw import find_initial_words
+from pipeline.spacy_shared._spacy import spacify
+
 
 def test_nomen():
     doc = spacify("Bundeswirtschaftsminister Werner Müller freut sich über solche Aussichten.")

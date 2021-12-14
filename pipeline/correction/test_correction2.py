@@ -1,5 +1,5 @@
-from _spacy import spacify_with_coref
 from pipeline.correction.correction2 import generate_possible_corrections
+from pipeline.spacy_shared._spacy import spacify_with_coref
 
 
 def test_simple_singular_with_case_preserve():

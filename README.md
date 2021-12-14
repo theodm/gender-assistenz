@@ -18,6 +18,18 @@ Evaluation des Systems werden die Genauigkeit untersucht und Verbesserungsmögli
 Darüber hinaus werden auch andere Aspekte einer geschlechtergerechten Sprache in
 Bezug auf maschinelle Unterstützungsmöglichkeiten diskutiert.
 
+## Screenshots
+### Erkennnung von generischem Maskulinum
+
+Legende:
+- Grau: Keine Personenbezeichnung oder kein generisches Maskulinum.
+- Blau: Personenbezeichnung + Generisches Maskulinum
+
+![Erkennung von generischem Maskulinum](./docs/screenshot.png)
+
+### Erstellung der Korrekturvorschläge
+![Erstellung der Korrekturvorschläge](./docs/example.gif)
+
 
 ## Installation und Start
 ### Voraussetzungen

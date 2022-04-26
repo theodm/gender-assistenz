@@ -3,7 +3,7 @@
 Dieses Repository beziehungsweise die hier liegende Anwendung entstand im Rahmen der Abschlussarbeit *Computerlinguistische Unterstützung des gendergerechten Schreibens* im Rahmen des Studiengangs *B.Sc. Informatik* an der Fernuniversität in Hagen. 
 Die Arbeit wurde betreut von [Dr. Niels Seidel](https://www.fernuni-hagen.de/ks/team/niels.seidel.shtml) im Lehrgebiet [Kooperative Systeme](https://www.fernuni-hagen.de/ks/) der Fernuniversität.
 
-Die schriftliche Ausarbeitung ist unter dem Link [TODO](TODO) zu finden. 
+Die schriftliche Ausarbeitung ist unter dem Link [https://ub-deposit.fernuni-hagen.de/receive/mir_mods_00001773](https://ub-deposit.fernuni-hagen.de/receive/mir_mods_00001773) zu finden. 
 
 ## Zusammenfassung der Arbeit
 Diese Arbeit beschäftigt sich mit der Frage, wie Verfasserinnen und Verfasser von Texten maschinell
